@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.S UNLOCK</title>
+    <!-- ✅ إضافة Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- ✅ استيراد ملفات CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <!-- ✅ إضافة ملف الهيدر المحسن -->
+    <link rel="stylesheet" href="header.css">
+    <!-- ✅ وصف الموقع -->
+    <meta name="description" content="A.S UNLOCK - خبراء فتح وإصلاح أجهزة التابلت بأحدث التقنيات. خدمات سريعة ومضمونة مع دعم على مدار الساعة.">
+    <!-- ✅ إضافة TensorFlow.js لتحليل الصور باستخدام الـ AI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+    <!-- خط Cairo من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1976D2;
+            --secondary: #42A5F5;
+            --accent: #2196F3;
+            --text-dark: #1565C0;
+            --text-light: #ffffff;
+            --error: #F44336;
+            --info: #2196F3;
+            --success: #4CAF50;
+            --background: #f8f9fa;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #1976D2, #42A5F5);
+            --gradient-accent: linear-gradient(135deg, #2196F3, #64B5F6);
+            --shadow-sm: 0 2px 4px rgba(25, 118, 210, 0.1);
+            --shadow-md: 0 4px 8px rgba(25, 118, 210, 0.12);
+            --shadow-lg: 0 8px 16px rgba(25, 118, 210, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Form Styles */
+        .hack-form {
+            background: var(--background);
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hack-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hack-form .container {
+            background: var(--white);
+            max-width: 420px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            padding: 32px 36px 40px 36px;
+            box-sizing: border-box;
+            position: relative;
+            margin: 0 auto;
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+
+        .hack-form .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(44, 62, 80, 0.2);
+        }
+
+        .hack-form h1 {
+            text-align: center;
+            margin: 0 0 22px 0;
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: 0.06em;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 3s ease infinite;
+        }
+
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hack-form label {
+            display: block;
+            font-weight: 700;
+            font-size: 1.08rem;
+            margin-bottom: 8px;
+            margin-top: 16px;
+            color: var(--text-dark);
+            user-select: text;
+            transition: var(--transition);
+        }
+
+        .hack-form input[type="text"],
+        .hack-form input[type="number"],
+        .hack-form select,
+        .hack-form input[type="file"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 12px;
+            border: 2.5px solid var(--secondary);
+            color: var(--text-dark);
+            background: var(--white);
+            font-family: 'Cairo', sans-serif;
+            transition: var(--transition);
+            box-sizing: border-box;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hack-form input[type="file"] {
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        .hack-form input[type="text"]:focus,
+        .hack-form input[type="number"]:focus,
+        .hack-form select:focus,
+        .hack-form input[type="file"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .hack-form input[readonly] {
+            opacity: 0.85;
+            cursor: not-allowed;
+            background: rgba(52, 152, 219, 0.05);
+            border-color: var(--secondary);
+        }
+
+        .hack-form button {
+            margin-top: 26px;
+            width: 100%;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 16px;
+            padding: 16px 0;
+            color: var(--white);
+            font-weight: 900;
+            font-size: 1.25rem;
+            cursor: pointer;
+            letter-spacing: 0.07em;
+            user-select: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hack-form button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .hack-form button:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hack-form button:hover::before {
+            left: 100%;
+        }
+
+        .hack-form .as-unloke-box {
+            margin-top: 18px;
+            padding: 14px 22px;
+            border-radius: 16px;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            color: var(--white);
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            user-select: none;
+            animation: flickerMove 7s cubic-bezier(.42,0,.58,1) infinite;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hack-form .as-unloke-box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 70%
+            );
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hack-form #hackExplanation {
+            margin-top: 20px;
+            padding: 18px 24px;
+            border-radius: 16px;
+            background: #1565C0;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1rem;
+            min-height: 50px;
+            box-shadow: 0 2px 8px rgba(13, 71, 161, 0.2);
+            user-select: text;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+            display: block;
+        }
+
+        .hack-form #hackExplanation.empty {
+            display: none;
+        }
+
+        .select-item img {
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .hack-form #priceBox {
+            margin-top: 8px;
+            padding: 14px 24px;
+            border-radius: 14px;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            user-select: none;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: gradientMove 3s linear infinite;
+        }
+
+        .hack-form #formDesc {
+            font-size: 0.9rem;
+            margin-top: 16px;
+            color: var(--error);
+            font-weight: 700;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(231, 76, 60, 0.1);
+            transition: var(--transition);
+        }
+
+        .hack-form #formDesc:hover {
+            background: rgba(231, 76, 60, 0.15);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 440px) {
+            .hack-form .container {
+                max-width: 95vw;
+                padding: 28px 24px 36px 24px;
+            }
+            .hack-form h1 {
+                font-size: 1.75rem;
+            }
+            .hack-form button {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* تخصيص مظهر القائمة المنسدلة */
+        select option {
+            padding: 10px;
+            background-color: white;
+            color: #2C3E50;
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 24px;
+            padding-left: 40px;
+        }
+        
+        select option:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* تخصيص مظهر القائمة المنسدلة في Firefox */
+        select option[value="vodafone"] {
+            background-image: url('assets/payico/vodafone-cash-icon.png');
+        }
+
+        select option[value="instapay"] {
+            background-image: url('assets/payico/instapay-icon.png');
+        }
+
+        .custom-select {
+            position: relative;
+            width: 100%;
+            user-select: none;
+            margin-bottom: 0;
+        }
+        .select-selected {
+            padding: 14px 16px;
+            font-size: 1rem;
+            font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+            font-weight: 500;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            min-height: 48px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .select-selected span {
+            text-align: center;
+            width: 100%;
+        }
+        .select-selected:hover {
+            border-color: #bbdefb;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            background: #e3f2fd;
+        }
+        .select-selected:active {
+            transform: translateY(0);
+            transition: all 0.1s ease;
+        }
+        .select-selected::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .select-selected:hover::before {
+            opacity: 1;
+        }
+        .select-selected:after {
+            content: '';
+            border: solid #666;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            margin-top: -4px;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .select-selected.open:after {
+            transform: rotate(-135deg);
+            margin-top: 0;
+        }
+        .select-selected:hover:after {
+            transform: rotate(45deg) scale(1.2);
+        }
+        .select-items {
+            position: absolute;
+            background-color: var(--white);
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            margin-top: 0;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 4px;
+            opacity: 0;
+            transform: translateY(-15px) scale(0.95);
+            pointer-events: none;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            scrollbar-width: none; /* Firefox */
+        }
+        .select-items::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+        }
+        .select-items:not(.select-hide) {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        /* تحسين شريط التمرير */
+        .select-items::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .select-items::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .select-items::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .select-items::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        .select-item {
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1rem;
+            font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+            color: var(--text-dark);
+            min-height: 48px;
+            background: var(--white);
+            border-radius: 12px;
+            margin: 4px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transform-origin: center;
+            text-align: center;
+        }
+        .select-item span {
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-align: center;
+            width: 100%;
+        }
+        .select-item:hover {
+            background: #e3f2fd;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: #bbdefb;
+        }
+        .select-item:active {
+            transform: translateY(0) scale(0.97);
+            transition: all 0.1s ease;
+        }
+        .select-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .select-item:hover::before {
+            opacity: 1;
+        }
+        .select-item::after {
+            display: none;
+        }
+        .select-selected .payment-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 12px;
+            border-right: 1px solid #e0e0e0;
+        }
+        .select-selected .payment-number {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            font-weight: 500;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .select-item .payment-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 12px;
+            border-right: 1px solid #e0e0e0;
+            flex: 1;
+        }
+        .select-item .payment-number {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            font-weight: 500;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .select-item img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            padding: 4px;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+        .select-item:hover img {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+        .select-selected img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            padding: 4px;
+            background: #f5f5f5;
+        }
+        .file-upload-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 2px solid #3498DB;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .file-upload-label:hover {
+            background: #f8fbff;
+            border-color: #1976D2;
+        }
+        .file-upload-label i {
+            font-size: 1.5rem;
+            color: #3498DB;
+        }
+        .file-upload-label span {
+            color: #2C3E50;
+            font-weight: 500;
+        }
+        .file-upload-input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-name {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f8fbff;
+            border-radius: 8px;
+            color: #2C3E50;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .file-name.show {
+            display: block;
+        }
+        .select-item img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 6px;
+            margin-left: 8px;
+        }
+        .select-selected img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 6px;
+            margin-left: 8px;
+        }
+        .select-selected .payment-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .select-selected .payment-number {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+        .select-item .payment-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .select-item .payment-number {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+            padding-right: 8px;
+            border-right: 1px solid #ddd;
+        }
+        .selected-payment-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 10px;
+            font-size: 1.08rem;
+            font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 10px 0;
+            color: #1976d2;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.07);
+            transition: all 0.3s;
+        }
+        .selected-payment-info img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 4px;
+            box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+        }
+        .selected-payment-info .payment-number {
+            font-size: 1.08rem;
+            color: #1976d2;
+            font-weight: 700;
+            background: #fff;
+            border-radius: 6px;
+            padding: 4px 12px;
+            margin-left: 4px;
+            letter-spacing: 1px;
+        }
+        .payment-select-best .select-selected,
+        .payment-select-best .select-item .pay-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            direction: rtl;
+            gap: 0;
+        }
+        .payment-select-best .select-selected {
+            min-height: 52px;
+            font-size: 1.08rem;
+            font-weight: 700;
+            background: #fff;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+            padding: 10px 18px;
+            transition: all 0.3s;
+        }
+        .payment-select-best .select-selected.open,
+        .payment-select-best .select-selected:focus {
+            border-color: #1976d2;
+            box-shadow: 0 2px 12px rgba(33,150,243,0.10);
+        }
+        .payment-select-best .select-selected span {
+            flex: 1;
+            text-align: center;
+            font-weight: 700;
+            color: #2C3E50;
+            font-size: 1.08rem;
+        }
+        .payment-select-best .select-selected .pay-flex {
+            width: 100%;
+        }
+        .payment-select-best .pay-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 0;
+        }
+        .payment-select-best .pay-flex img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 2px 2px 2px 8px;
+            margin-left: 0;
+            margin-right: 10px;
+            box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+        }
+        .payment-select-best .pay-name {
+            flex: 1;
+            text-align: center;
+            font-weight: 700;
+            color: #2C3E50;
+            font-size: 1.08rem;
+        }
+        .payment-select-best .pay-number {
+            font-size: 1.08rem;
+            color: #1976d2;
+            font-weight: 700;
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 4px 12px;
+            margin-left: 4px;
+            margin-right: 0;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+        .payment-select-best .select-item {
+            background: #fff;
+            border-radius: 12px;
+            margin: 4px 0;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+            cursor: pointer;
+            min-height: 52px;
+            box-shadow: 0 1px 4px rgba(33,150,243,0.03);
+        }
+        .payment-select-best .select-item:hover,
+        .payment-select-best .select-item.active {
+            background: #e3f2fd;
+            border-color: #1976d2;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+        }
+        .payment-select-best .select-items {
+            scrollbar-width: none;
+        }
+        .payment-select-best .select-items::-webkit-scrollbar {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .payment-select-best .select-selected,
+            .payment-select-best .select-item .pay-flex {
+                font-size: 0.98rem;
+            }
+            .payment-select-best .pay-flex img {
+                width: 28px;
+                height: 28px;
+            }
+            .payment-select-best .pay-number {
+                padding: 3px 6px;
+                font-size: 0.98rem;
+            }
+        }
+        .pay-flex {
+            display: flex !important;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 0;
+        }
+        .pay-flex img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 2px;
+            margin-left: 10px;
+            margin-right: 0;
+            box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+        }
+        .pay-flex .pay-name {
+            width: auto;
+            text-align: center;
+            font-weight: 600;
+            color: #2C3E50;
+            font-size: 1.05rem;
+            margin-left: 8px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .pay-flex .pay-number {
+            font-size: 0.97rem;
+            color: #1976d2;
+            font-weight: 500;
+            background: #fafdff;
+            border: 1.5px solid #e3f2fd;
+            border-radius: 12px;
+            padding: 4px 8px;
+            margin-left: 0;
+            margin-right: 0;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            min-width: 0;
+            width: auto;
+            text-align: center;
+            box-sizing: border-box;
+            transition: background 0.2s, border 0.2s;
+        }
+        .select-item .pay-flex:hover .pay-number {
+            background: #e3f2fd;
+            border-color: #1976d2;
+        }
+        @media (max-width: 600px) {
+            .pay-flex img {
+                width: 26px;
+                height: 26px;
+            }
+            .pay-flex .pay-number {
+                min-width: 60px;
+                padding: 3px 6px;
+                font-size: 0.93rem;
+            }
+            .pay-flex .pay-name {
+                font-size: 0.97rem;
+            }
+        }
+        .select-selected, .pay-flex {
+            padding-right: 0 !important;
+        }
+        .select-selected .pay-flex {
+            padding-right: 0;
+        }
+        .select-selected .pay-number {
+            margin-left: 36px !important;
+        }
+
+        .service-guarantee-section-arabic {
+          background: #fff !important;
+          padding: 54px 0 36px 0;
+          direction: rtl;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .sg-title, .sg-title-underline, .sg-subtitle {
+          color: #1976D2 !important;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .sg-title {
+          color: #1976D2 !important;
+          font-size: 2.3rem;
+          font-weight: 900;
+          margin-bottom: 0px;
+          letter-spacing: 0.5px;
+          position: relative;
+          text-align: center;
+        }
+        .sg-title-underline {
+          width: 90px;
+          height: 5px;
+          margin: 0 auto 18px auto;
+          border-radius: 3px;
+          background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+          opacity: 0.85;
+        }
+        .sg-subtitle {
+          text-align: center;
+          color: #2C3E50 !important;
+          font-size: 1.08rem;
+          font-weight: 600;
+          margin-bottom: 30px;
+        }
+        .sg-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 32px;
+          width: 100%;
+          max-width: 950px;
+          margin: 0 auto;
+        }
+        .sg-card {
+          background: #fff;
+          border-radius: 18px;
+          box-shadow: 0 4px 18px rgba(25, 118, 210, 0.10), 0 1.5px 6px rgba(66, 165, 245, 0.09);
+          padding: 32px 18px 24px 18px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 220px;
+          position: relative;
+          overflow: hidden;
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .sg-card-bar {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 6px;
+          background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+          border-radius: 0 0 8px 8px;
+          opacity: 0.85;
+        }
+        .sg-card:hover {
+          box-shadow: 0 10px 32px rgba(25, 118, 210, 0.18), 0 2.5px 12px rgba(66, 165, 245, 0.13);
+          transform: translateY(-7px) scale(1.035);
+        }
+        .sg-icon {
+          background: #fff !important;
+          border-radius: 50%;
+          width: 72px;
+          height: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 18px;
+          box-shadow: 0 4px 18px rgba(25, 118, 210, 0.22);
+          border: 2.5px solid #1976D2;
+        }
+        .sg-icon i {
+          font-size: 2.3em !important;
+          background: linear-gradient(135deg, #1976D2, #42A5F5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          display: block;
+          transition: transform 0.2s;
+        }
+        .sg-card:hover .sg-icon i {
+          transform: scale(1.13) rotate(-8deg);
+        }
+        .sg-card-title {
+          font-size: 1.18rem;
+          font-weight: 900;
+          color: #1976D2 !important;
+          margin-bottom: 8px;
+          margin-top: 0;
+          letter-spacing: 0.01em;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .sg-card-desc {
+          font-size: 1rem;
+          color: #222 !important;
+          line-height: 1.8;
+          font-weight: 500;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .sg-card-btn {
+          margin-top: 18px;
+          padding: 14px 22px;
+          border-radius: 16px;
+          background: var(--gradient-primary);
+          background-size: 200% 200%;
+          color: var(--white);
+          text-align: center;
+          font-weight: 900;
+          font-size: 1.1rem;
+          letter-spacing: 0.08em;
+          user-select: none;
+          animation: flickerMove 7s cubic-bezier(.42,0,.58,1) infinite;
+          box-shadow: var(--shadow-md);
+          position: relative;
+          overflow: hidden;
+        }
+        @media (max-width: 900px) {
+          .sg-cards-grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            max-width: 100%;
+            gap: 18px;
+          }
+        }
+        @media (max-width: 600px) {
+          .sg-cards-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            gap: 12px;
+          }
+          .sg-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 1.3rem;
+          }
+        }
+        .sg-card:hover .sg-icon i {
+          color: #a259ec !important;
+          transition: color 0.2s;
+        }
+
+        .fp-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px;
+          width: 100%;
+          max-width: 950px;
+          margin: 0 auto;
+        }
+        .fp-card {
+          background: #fff;
+          border-radius: 18px;
+          box-shadow: 0 4px 18px rgba(25, 118, 210, 0.10), 0 1.5px 6px rgba(66, 165, 245, 0.09);
+          padding: 0 0 28px 0;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 340px;
+          position: relative;
+          overflow: hidden;
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .fp-img-box {
+          width: 100%;
+          height: 170px;
+          background: #f7f7fa;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 18px 18px 0 0;
+          overflow: hidden;
+          margin-bottom: 18px;
+        }
+        .fp-img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          border-radius: 18px 18px 0 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        .fp-card-title {
+          font-size: 1.18rem;
+          font-weight: 900;
+          color: #1976D2;
+          margin-bottom: 8px;
+          margin-top: 0;
+          letter-spacing: 0.01em;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .fp-card-desc {
+          font-size: 1rem;
+          color: #222;
+          line-height: 1.7;
+          font-weight: 500;
+          margin-bottom: 12px;
+          font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .fp-card-price {
+          font-size: 1.08rem;
+          color: #1dbf73;
+          font-weight: 700;
+          margin-bottom: 18px;
+        }
+        .fp-card-price span {
+          color: #1dbf73;
+          font-weight: 900;
+          font-size: 1.13rem;
+        }
+        .fp-card-price-noshow {visibility:hidden;height:18px;}
+        .fp-btn {
+          display: inline-block;
+          padding: 12px 32px;
+          background: linear-gradient(90deg,#1976D2 0%,#42A5F5 100%);
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          font-weight: 700;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background 0.2s, transform 0.2s;
+          text-decoration: none;
+          margin-top: 8px;
+          box-shadow: 0 2px 8px rgba(25, 118, 210, 0.22);
+        }
+        .fp-btn:hover {
+          background: linear-gradient(90deg,#42A5F5 0%,#1976D2 100%);
+          transform: translateY(-2px) scale(1.04);
+        }
+        .fp-showall-btn {
+          display: inline-block;
+          padding: 16px 48px;
+          background: linear-gradient(90deg,#1976D2 0%,#42A5F5 100%);
+          color: #fff;
+          border: none;
+          border-radius: 14px;
+          font-weight: 900;
+          font-size: 1.18rem;
+          cursor: pointer;
+          transition: background 0.2s, transform 0.2s;
+          text-decoration: none;
+          margin-top: 8px;
+          box-shadow: 0 4px 18px rgba(25, 118, 210, 0.22);
+        }
+        .fp-showall-btn:hover {
+          background: linear-gradient(90deg,#42A5F5 0%,#1976D2 100%);
+          transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 900px) {
+          .fp-cards-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+          }
+        }
+        @media (max-width: 600px) {
+          .fp-cards-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .fp-img-box {height:120px;}
+          .fp-card {min-height:unset;}
+          .fp-showall-btn {font-size:1rem;padding:12px 24px;}
+        }
+
+        .cta-glow,.cta-outline {
+          transition:background 0.2s,box-shadow 0.2s,color 0.2s,border 0.2s,transform 0.18s;
+        }
+        
+        /* انيميشن الخط تحت A.S.Unlock */
+        .brand-name {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .brand-name::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 0;
+          height: 4px;
+          background: linear-gradient(90deg, #1976D2, #42A5F5);
+          border-radius: 2px;
+          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 2px 8px rgba(25, 118, 210, 0.4);
+          z-index: 1;
+        }
+        
+        .brand-name:hover::after {
+          width: 100%;
+        }
+        
+        .brand-name:hover {
+          transform: translateY(-2px);
+          text-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+        }
+        
+        /* حركة bounce للسهم */
+        .arrow-bounce {
+          animation:bounceDown 1.5s infinite;
+          cursor:pointer;
+          transition:all 0.3s ease;
+        }
+        .arrow-bounce:hover {
+          transform:scale(1.2);
+        }
+        @keyframes bounceDown {
+          0%,100%{transform:translateY(0);}
+          50%{transform:translateY(15px);}
+        }
+
+        /* ✅ الأنماط الجديدة لقسم ضمان الخدمات */
+        .guarantee-section {
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          padding: 80px 0;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .guarantee-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+          opacity: 0.3;
+          z-index: 1;
+        }
+
+        .guarantee-section .container {
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .guarantee-header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .guarantee-title {
+          font-size: 2.5rem;
+          font-weight: 900;
+          color: var(--text-color);
+          margin-bottom: 20px;
+          background: var(--gradient-primary);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          position: relative;
+        }
+
+        .guarantee-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: var(--gradient-primary);
+          border-radius: 2px;
+        }
+
+        .guarantee-subtitle {
+          font-size: 1.1rem;
+          color: var(--text-muted);
+          font-weight: 500;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .guarantee-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 30px;
+          margin-top: 50px;
+        }
+
+        .guarantee-card {
+          background: white;
+          padding: 40px 30px;
+          border-radius: 20px;
+          box-shadow: var(--shadow-sm);
+          text-align: center;
+          transition: var(--transition);
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(25, 118, 210, 0.1);
+        }
+
+        .guarantee-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: var(--gradient-primary);
+          z-index: 1;
+        }
+
+        .guarantee-card:hover {
+          transform: translateY(-10px);
+          box-shadow: var(--shadow-lg);
+          border-color: rgba(25, 118, 210, 0.3);
+        }
+
+        .guarantee-card .card-icon {
+          width: 80px !important;
+          height: 80px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          border-radius: 50% !important;
+          background: var(--gradient-primary) !important;
+          box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4), 0 2px 8px rgba(0,0,0,0.15) !important;
+          position: relative !important;
+          margin: 0 auto 25px auto !important;
+          transition: all 0.3s ease !important;
+          border: none !important;
+          overflow: visible !important;
+          opacity: 1 !important;
+          filter: none !important;
+          backdrop-filter: none !important;
+          mix-blend-mode: normal !important;
+          isolation: isolate !important;
+          animation: cardIconPulse 2s ease-in-out infinite !important;
+        }
+
+        /* ✅ الدائرة النابضة */
+        .guarantee-card .card-icon:before {
+          content: '' !important;
+          position: absolute !important;
+          top: -4px !important;
+          left: -4px !important;
+          right: -4px !important;
+          bottom: -4px !important;
+          background: var(--gradient-primary) !important;
+          border-radius: 50% !important;
+          z-index: -1 !important;
+          animation: pulseRing 2s ease-in-out infinite !important;
+          opacity: 0.4 !important;
+          display: block !important;
+          visibility: visible !important;
+        }
+
+        .guarantee-card:hover .card-icon {
+          transform: translateY(-3px) scale(1.05) !important;
+          box-shadow: 0 8px 25px rgba(25, 118, 210, 0.5), 0 4px 15px rgba(0,0,0,0.2) !important;
+          animation: cardIconHover 0.6s ease-in-out !important;
+        }
+
+        /* ✅ انيميشن الكروت */
+        .guarantee-card {
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        .guarantee-card:hover {
+          transform: translateY(-8px) scale(1.02) !important;
+          box-shadow: 0 15px 35px rgba(25, 118, 210, 0.15), 0 8px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        .guarantee-card:nth-child(1) { animation-delay: 0.1s !important; }
+        .guarantee-card:nth-child(2) { animation-delay: 0.2s !important; }
+        .guarantee-card:nth-child(3) { animation-delay: 0.3s !important; }
+        .guarantee-card:nth-child(4) { animation-delay: 0.4s !important; }
+        .guarantee-card:nth-child(5) { animation-delay: 0.5s !important; }
+        .guarantee-card:nth-child(6) { animation-delay: 0.6s !important; }
+
+        /* ✅ تعريف الانيميشن */
+        @keyframes cardIconPulse {
+          0%, 100% { 
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4), 0 2px 8px rgba(0,0,0,0.15);
+          }
+          50% { 
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.5), 0 4px 12px rgba(0,0,0,0.2);
+          }
+        }
+
+        @keyframes pulseRing {
+          0% { 
+            transform: scale(1);
+            opacity: 0.6;
+          }
+          50% { 
+            transform: scale(1.2);
+            opacity: 0.3;
+          }
+          100% { 
+            transform: scale(1);
+            opacity: 0.6;
+          }
+        }
+
+        @keyframes cardIconHover {
+          0% { transform: translateY(-3px) scale(1.05); }
+          50% { transform: translateY(-3px) scale(1.1); }
+          100% { transform: translateY(-3px) scale(1.05); }
+        }
+
+        @keyframes iconFloat {
+          0%, 100% { 
+            transform: translateY(0px);
+          }
+          50% { 
+            transform: translateY(-3px);
+          }
+        }
+
+        /* @keyframes cardFadeIn {
+          0% { 
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        } */
+
+        .guarantee-card h3 {
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--text-color);
+          margin-bottom: 15px;
+        }
+
+        .guarantee-card p {
+          font-size: 1rem;
+          color: var(--text-muted);
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        @media (max-width: 768px) {
+          .guarantee-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+          
+          .guarantee-section .container {
+            padding: 0 15px;
+          }
+          
+          .guarantee-title {
+            font-size: 2rem;
+          }
+          
+          .guarantee-subtitle {
+            font-size: 1rem;
+          }
+        }
+
+        .guarantee-desc {
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          background: linear-gradient(90deg, #f8faff 60%, #f3f6fd 100%);
+          border-radius: 18px;
+          box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+          padding: 22px 28px;
+          margin: 32px auto 0 auto;
+          max-width: 650px;
+          border: 1.5px solid #e3e8f7;
+          position: relative;
+        }
+        .guarantee-desc-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, rgba(25, 118, 210, 0.22) 60%, rgba(66, 165, 245, 0.22) 100%);
+          border-radius: 50%;
+          width: 48px;
+          height: 48px;
+          box-shadow: 0 2px 8px rgba(25, 118, 210, 0.11);
+          margin-top: 2px;
+        }
+        .guarantee-desc-text {
+          font-size: 1.13rem;
+          color: var(--text-color);
+          font-weight: 500;
+          line-height: 1.9;
+          text-align: right;
+        }
+        .guarantee-desc-text strong {
+          color: #1976D2;
+          font-size: 1.15em;
+          font-weight: 900;
+          display: inline-block;
+          margin-bottom: 2px;
+        }
+        @media (max-width: 600px) {
+          .guarantee-desc {
+            flex-direction: column;
+            align-items: center;
+            padding: 16px 10px;
+            gap: 10px;
+          }
+          .guarantee-desc-text {
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+
+        .team-list-custom li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+          padding: 25px;
+          border-radius: 20px;
+          box-shadow: 0 8px 25px rgba(25, 118, 210, 0.12);
+          border: 2px solid rgba(25, 118, 210, 0.1);
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .team-list-custom li::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+          z-index: 1;
+        }
+
+        .team-list-custom li:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 15px 35px rgba(25, 118, 210, 0.2);
+          border-color: rgba(25, 118, 210, 0.3);
+        }
+
+        .team-list-custom .team-icon-custom {
+          font-size: 2.8em;
+          color: #1976D2;
+          margin: 0 0 8px 0;
+          filter: drop-shadow(0 2px 8px rgba(25, 118, 210, 0.3));
+          animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .team-list-custom .team-name-custom {
+          font-weight: 800;
+          font-size: 1.3em;
+          color: #1976D2;
+          margin: 0;
+          text-shadow: 0 2px 4px rgba(25, 118, 210, 0.1);
+        }
+
+        .team-list-custom li span:last-child {
+          font-size: 1.05em;
+          color: #555;
+          font-weight: 600;
+          margin-top: 5px;
+          background: linear-gradient(135deg, rgba(25, 118, 210, 0.22) 0%, rgba(66, 165, 245, 0.22) 100%);
+          border-radius: 20px;
+          padding: 8px 16px;
+          border: 1px solid rgba(25, 118, 210, 0.2);
+        }
+
+        .team-btn-custom {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 42px;
+          border-radius: 35px;
+          background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+          color: #fff;
+          font-size: 1.18rem;
+          font-weight: 700;
+          text-decoration: none;
+          box-shadow: 0 10px 30px rgba(25, 118, 210, 0.3);
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border: none;
+          margin-top: 15px;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .team-btn-custom:hover {
+          transform: translateY(-5px) scale(1.05);
+          box-shadow: 0 15px 40px rgba(25, 118, 210, 0.4);
+        }
+
+        .team-image-custom {
+          flex: 1 1 45%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          min-height: 250px;
+          position: relative;
+        }
+
+        .shield-img-custom {
+          width: 360px;
+          max-width: 95vw;
+          background: none;
+          border-radius: 25px;
+          box-shadow: 0 20px 40px rgba(25, 118, 210, 0.15);
+          border: 3px solid rgba(25, 118, 210, 0.1);
+          margin: -180px auto 32px auto;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          object-fit: contain;
+          display: block;
+          position: relative;
+          z-index: 2;
+        }
+
+        .shield-img-custom:hover {
+          transform: scale(1.08) rotate(3deg);
+          box-shadow: 0 25px 50px rgba(25, 118, 210, 0.25);
+        }
+
+        @media (max-width: 900px) {
+          .team-container-custom {
+            flex-direction: column;
+            gap: 40px;
+          }
+          .team-info-custom, .team-image-custom {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+          }
+          .team-stats-simple {
+            gap: 15px;
+          }
+          .team-stat-simple {
+            padding: 15px 18px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .team-section-custom {
+            padding: 60px 0 30px 0;
+          }
+          .shield-img-custom {
+            width: 200px;
+            margin: -100px auto 25px auto;
+          }
+          .team-title-custom {
+            font-size: 2rem;
+          }
+          .team-desc-custom {
+            font-size: 1rem;
+            padding: 20px;
+          }
+          .team-btn-custom {
+            font-size: 1rem;
+            padding: 14px 30px;
+          }
+          .team-stats-simple {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+
+        .team-container-custom {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 50px;
+          max-width: 1100px;
+          margin: 0 auto;
+          flex-direction: row-reverse;
+          padding: 0 20px;
+        }
+        .team-image-custom {
+          flex: 0 0 370px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .team-logo-container {
+          background: #fff;
+          border-radius: 30px;
+          box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+          padding: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 260px;
+          min-height: 260px;
+          max-width: 340px;
+          max-height: 340px;
+        }
+        .shield-img-custom {
+          width: 240px;
+          height: 240px;
+          object-fit: contain;
+          display: block;
+          background: none;
+          border-radius: 22px;
+          box-shadow: none;
+          border: none;
+          margin: 0;
+        }
+        .team-info-custom {
+          flex: 1 1 60%;
+          text-align: center;
+          direction: rtl;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 900px) {
+          .team-container-custom {
+            gap: 20px;
+          }
+          .team-logo-container {
+            padding: 18px;
+            min-width: 160px;
+            min-height: 160px;
+            max-width: 200px;
+            max-height: 200px;
+          }
+          .shield-img-custom {
+            width: 120px;
+            height: 120px;
+          }
+        }
+        @media (max-width: 700px) {
+          .team-container-custom {
+            flex-direction: column;
+            gap: 18px;
+            padding: 0 5px;
+          }
+          .team-image-custom, .team-logo-container {
+            margin-bottom: 8px;
+            align-self: center;
+          }
+          .team-info-custom {
+            align-items: center;
+            text-align: center;
+          }
+        }
+        .social-link i {
+          font-size: 1.6rem !important;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .social-link.telegram {
+          background: #fff;
+          color: #229ED9 !important;
+          border: 2px solid #229ED9;
+        }
+        .social-link.youtube {
+          background: #fff;
+          color: #FF0000 !important;
+          border: 2px solid #FF0000;
+        }
+        .social-link.whatsapp {
+          background: #fff;
+          color: #25D366 !important;
+          border: 2px solid #25D366;
+        }
+        .social-link:hover {
+          background: #f3f8ff;
+          filter: brightness(1.15);
+          box-shadow: 0 4px 16px rgba(25,118,210,0.13);
+          border-color: #1976D2 !important;
+        }
+
+        .modern-footer {
+          background: linear-gradient(120deg, #162447 60%, #1f4068 100%);
+          color: #fff;
+          padding: 0 0 0 0;
+          margin-top: 0;
+          border-top: 2px solid #1976D2;
+        }
+        .modern-footer-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 24px 18px 0 18px;
+          gap: 28px;
+        }
+        .footer-about h3,
+        .footer-links-modern h4,
+        .footer-contact-modern h4 {
+          color: #fff;
+          margin-bottom: 12px;
+          font-weight: 800;
+        }
+        .footer-about p {
+          color: #bfc9da;
+          font-size: 1.01rem;
+        }
+        .footer-links-modern ul,
+        .footer-contact-modern ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .footer-links-modern ul li a {
+          color: #bfc9da;
+          text-decoration: none;
+          font-size: 1.05rem;
+          transition: color 0.2s;
+        }
+        .footer-links-modern ul li a:hover {
+          color: #42A5F5;
+          text-decoration: underline;
+        }
+        .footer-contact-modern ul li {
+          color: #e3f2fd;
+          font-size: 1.05rem;
+          margin-bottom: 8px;
+        }
+        .footer-socials-modern a {
+          color: #fff;
+          background: rgba(255,255,255,0.08);
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          font-size: 1.3rem;
+          margin-right: 8px;
+          transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+        }
+        .footer-socials-modern a:hover {
+          background: #fff;
+          color: #1976D2;
+          box-shadow: 0 4px 16px rgba(25,118,210,0.13);
+        }
+        .footer-logo-modern {
+          width: 52px;
+          height: 52px;
+          object-fit: contain;
+          margin-top: 12px;
+          margin-bottom: 8px;
+          background: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        .footer-copyright-modern {
+          background: rgba(0,0,0,0.10);
+          color: #e3f2fd;
+          text-align: center;
+          padding: 18px 0 10px 0;
+          font-size: 1.01rem;
+          margin-top: 30px;
+          letter-spacing: 0.5px;
+        }
+        @media (max-width: 700px) {
+          .modern-footer-container {
+            flex-direction: column;
+            gap: 18px;
+            padding: 0 8px;
+          }
+          .footer-about, .footer-links-modern, .footer-contact-modern {
+            margin-bottom: 18px;
+          }
+        }
+
+        .main-nav.desktop-menu ul li a,
+        .mobile-menu ul li a {
+          transition: background 0.2s, color 0.2s, border-radius 0.2s;
+          border-radius: 18px;
+        }
+        .main-nav.desktop-menu ul li a:hover,
+        .main-nav.desktop-menu ul li a.active,
+        .mobile-menu ul li a:hover,
+        .mobile-menu ul li a.active {
+          background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%) !important;
+          color: #fff !important;
+          border-radius: 18px;
+        }
+
+        .member-socials .social-link {
+          background: none !important;
+          border: none !important;
+          box-shadow: none !important;
+          color: inherit;
+          width: auto;
+          height: auto;
+          font-size: 2.1rem;
+          padding: 0 7px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: color 0.2s, box-shadow 0.3s, transform 0.25s;
+        }
+        .member-socials .social-link.telegram:hover {
+          color: #229ED9 !important;
+          box-shadow: 0 0 32px 8px #229ED9ee, 0 0 12px 2px #229ED9cc;
+          transform: scale(1.18);
+        }
+        .member-socials .social-link.youtube:hover {
+          color: #FF0000 !important;
+          box-shadow: 0 0 32px 8px #FF0000ee, 0 0 12px 2px #FF0000cc;
+          transform: scale(1.18);
+        }
+        .member-socials .social-link.whatsapp:hover {
+          color: #25D366 !important;
+          box-shadow: 0 0 32px 8px #25D366ee, 0 0 12px 2px #25D366cc;
+          transform: scale(1.18);
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ الهيدر المحسن الموحد -->
+    <header class="modern-header">
+      <div class="header-container">
+        <div class="branding">
+          <img src="logo.PNG" alt="A.S UNLOCK Logo">
+          <span>A.S UNLOCK</span>
+        </div>
+        
+        <nav class="main-nav desktop-menu">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="downloads.html">التحميلات</a></li>
+            <li><a href="team.html">فريق العمل</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="tel:+201069062005" class="contact-btn">
+            <i class="fas fa-phone"></i> اتصل بنا
+          </a>
+          <a href="under-construction.html" class="login-btn">
+            <i class="fa fa-sign-in-alt"></i> تسجيل الدخول
+          </a>
+          <a href="https://wa.me/201069062005" target="_blank" class="social-icon whatsapp" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://t.me/as_unlock" target="_blank" class="social-icon telegram" title="تليجرام">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://www.youtube.com/@as_unlock" target="_blank" class="social-icon youtube" title="يوتيوب">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        
+        <button class="menu-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- القائمة المتحركة للموبايل -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="warranty.html">الضمان</a></li>
+        <li><a href="downloads.html">التحميلات</a></li>
+        <li><a href="team.html">فريق العمل</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(100deg,#18181c 70%,#2d2412 100%);">
+      <div class="hero-fadein" style="width:100%;max-width:700px;margin:0 auto;text-align:center;z-index:2;">
+        <h1 class="hero-title-fadein" style="font-family:'Cairo', 'Tajawal', Arial, sans-serif;font-weight:900;font-size:3.5rem;color:#fff;line-height:1.2;margin-bottom:20px;text-shadow:0 4px 24px rgba(25,118,210,0.18),0 2px 8px rgba(0,0,0,0.18);">
+          <span style="font-family:'Cairo', 'Tajawal', Arial, sans-serif;font-weight:900;">مرحباً بك في </span>
+          <span class="brand-name" style="font-family:'Poppins', 'Cairo', Arial, sans-serif;font-weight:800;letter-spacing:0.5px;background:linear-gradient(90deg,#1976D2,#42A5F5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;cursor:pointer;transition:all 0.3s ease;">A.S.Unlock</span>
+            </h1>
+        <p class="hero-desc-fadein" style="font-size:1.3rem;color:#d1d5db;font-family:'Cairo', 'Tajawal', Arial, sans-serif;font-weight:500;margin-bottom:40px;line-height:1.7;">
+          كل خدماتك في مكان واحد مع أكبر تيم عربي للخدمات في مصر و الشرق الأوسط، لأن كل خدماتك بأعلى جودة وأسرع وقت و بأحسن سعر.
+            </p>
+        <div class="hero-btns-fadein" style="display:flex;gap:20px;justify-content:center;margin-bottom:40px;flex-wrap:wrap;">
+          <a href="products.html" class="cta-glow" style="background:linear-gradient(90deg,#1976D2,#42A5F5);color:#fff;font-family:'Cairo', 'Tajawal', Arial, sans-serif;font-weight:800;font-size:1.15rem;padding:15px 40px;border-radius:30px;box-shadow:0 0 18px 0 rgba(25,118,210,0.55),0 4px 18px rgba(25,118,210,0.10);border:none;outline:none;cursor:pointer;transition:background 0.2s,box-shadow 0.2s,transform 0.18s;display:inline-block;text-decoration:none;">تصفح منتجاتنا</a>
+          <a href="#contact" class="cta-outline" style="background:rgba(255,255,255,0.05);color:#1976d2;font-family:'Cairo', 'Tajawal', Arial, sans-serif;font-weight:800;font-size:1.15rem;padding:15px 40px;border-radius:30px;box-shadow:0 2px 8px rgba(25,118,210,0.08);border:2px solid #1976d2;outline:none;cursor:pointer;transition:background 0.2s,box-shadow 0.2s,color 0.2s,border 0.2s,transform 0.18s;display:inline-block;text-decoration:none;backdrop-filter:blur(2px);">تواصل معنا</a>
+            </div>
+        </div>
+      
+      <!-- السهم في أسفل الهيرو -->
+      <div class="hero-arrow-fadein" style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;">
+        <span class="arrow-bounce" style="display:inline-block;display:flex;align-items:center;justify-content:center;" onclick="document.querySelector('.guarantee-section').scrollIntoView({behavior:'smooth'});">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+            </div>
+      
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=Poppins:wght@800&display=swap');
+        @media (max-width: 700px) {
+          .hero-section h1 {font-size:2.3rem;}
+          .hero-section p {font-size:1.1rem;}
+          .hero-section a {font-size:1rem;padding:12px 25px;}
+          .hero-arrow-fadein {bottom:20px;}
+          .arrow-bounce {width:40px;height:40px;}
+        }
+        @media (max-width: 400px) {
+          .hero-section h1 {font-size:1.8rem;}
+          .hero-section p {font-size:1rem;}
+          .hero-section a {font-size:0.95rem;padding:10px 20px;}
+          .hero-arrow-fadein {bottom:15px;}
+          .arrow-bounce {width:35px;height:35px;}
+        }
+        .cta-glow {
+          box-shadow:0 0 18px 0 #b066fe55,0 4px 18px rgba(106,130,251,0.10);
+          position:relative;
+        }
+        .cta-glow:hover {
+          filter:brightness(1.08);
+          box-shadow:0 0 32px 0 #b066fecc,0 8px 32px rgba(106,130,251,0.18);
+          background:linear-gradient(90deg,#7f53ac,#647dee);
+          color:#fff !important;
+          border-color:#7f53ac !important;
+          transform:scale(1.07);
+        }
+        .cta-outline:hover {
+          background:rgba(25,118,210,0.12);
+          color:#1976d2 !important;
+          border-color:#1976d2 !important;
+          transform:scale(1.07);
+          box-shadow:0 4px 18px #1976d244;
+        }
+        .cta-glow,.cta-outline {
+          transition:background 0.2s,box-shadow 0.2s,color 0.2s,border 0.2s,transform 0.18s;
+        }
+        /* حركة bounce للسهم */
+        .arrow-bounce {
+          animation:bounceDown 1.5s infinite;
+          cursor:pointer;
+          transition:all 0.3s ease;
+        }
+        .arrow-bounce:hover {
+          transform:scale(1.2);
+        }
+        @keyframes bounceDown {
+          0%,100%{transform:translateY(0);}
+          50%{transform:translateY(15px);}
+        }
+        /* Fade-in animation */
+        .hero-fadein,.hero-title-fadein,.hero-desc-fadein,.hero-btns-fadein,.hero-arrow-fadein {
+          opacity:0;
+          transform:translateY(30px);
+          animation:fadeInUpHero 0.9s cubic-bezier(.4,0,.2,1) forwards;
+        }
+        .hero-title-fadein{animation-delay:0.1s;}
+        .hero-desc-fadein{animation-delay:0.25s;}
+        .hero-btns-fadein{animation-delay:0.4s;}
+        .hero-arrow-fadein{animation-delay:0.8s;}
+        .hero-fadein{animation-delay:0s;}
+        @keyframes fadeInUpHero {
+          to{opacity:1;transform:translateY(0);}
+        }
+      </style>
+    </section>
+
+    <!-- Guarantee Section: تصميم مُحسّن ومطابق للمواصفات -->
+    <section class="guarantee-section">
+      <div class="container">
+        <div class="guarantee-header">
+          <h2 class="guarantee-title">ضمان الخدمات</h2>
+          <p class="guarantee-subtitle">نقدم لعملائنا ضمان شامل على كافة خدماتنا لضمان رضاكم التام</p>
+          <div class="guarantee-desc">
+            <span class="guarantee-desc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8l1.09 2.21L15.5 11l-1.91 1.79L14 15l-2-1.05L10 15l.41-2.21L8.5 11l2.41-.79z"/></svg>
+            </span>
+            <div class="guarantee-desc-text">
+              <strong>التزامنا بتقديم أفضل خدمة</strong><br>
+              في سيف-تي ستور، نحن ملتزمون بتقديم أعلى مستويات الخدمة والجودة. ثقتكم هي أولويتنا، لذلك نقدم ضماناً شاملاً على جميع خدماتنا لنضمن رضاكم التام واستمرار عمل أجهزتكم بكفاءة.
+                </div>
+          </div>
+        </div>
+        
+        <div class="guarantee-grid">
+          <!-- Card 1 -->
+          <div class="guarantee-card">
+            <div class="card-icon refund">
+              <!-- استرداد الخدمة: أيقونة إعادة -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 2v6h-6" />
+                <path d="M3 12a9 9 0 1 0 3-7" />
+              </svg>
+                        </div>
+            <h3>استرداد الخدمة</h3>
+            <p>استرداد كامل للمبلغ خلال 24 ساعة في حال عدم الرضا، مع توضيح سبب مقنع.</p>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="guarantee-card">
+            <div class="card-icon support">
+              <!-- دعم فوري: أيقونة هاتف -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+                            </div>
+            <h3>دعم فوري</h3>
+            <p>دعم مباشر عبر تيليجرام على مدار الساعة لحل أي مشكلة بأسرع وقت ممكن.</p>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="guarantee-card">
+            <div class="card-icon guarantee">
+              <!-- ضمان حقيقي: أيقونة درع -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+                            </div>
+            <h3>ضمان حقيقي</h3>
+            <p>ضمان شامل على جميع الخدمات، يشمل تكرار النتائج بدون تكاليف إضافية.</p>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="guarantee-card">
+            <div class="card-icon speed">
+              <!-- سرعة التنفيذ: أيقونة صاروخ -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+                            </div>
+            <h3>سرعة في التنفيذ</h3>
+            <p>تنفيذ سريع للخدمة حسب نوع الطلب، مع متابعة مستمرة حتى إتمام العمل.</p>
+          </div>
+          
+          <!-- Card 5 -->
+          <div class="guarantee-card">
+            <div class="card-icon maintenance">
+              <!-- صيانة دورية: أيقونة مفتاح إنجليزي -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+                        </div>
+            <h3>صيانة دورية</h3>
+            <p>نقدم صيانة ومتابعة للخدمة بعد التنفيذ للحفاظ على الجودة والاستقرار.</p>
+          </div>
+          
+          <!-- Card 6 -->
+          <div class="guarantee-card">
+            <div class="card-icon certified">
+              <!-- خدمة معتمدة: أيقونة نجمة -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>خدمة معتمدة</h3>
+            <p>نستخدم أفضل الطرق والأدوات لضمان خدمة آمنة وموثوقة بعيدة عن المخاطر.</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products-section" style="background:#fff;direction:rtl;font-family:'Cairo','Tajawal',Arial,sans-serif;padding:60px 0 40px 0;">
+      <div class="fp-container" style="max-width:1200px;margin:0 auto;">
+        <h2 class="fp-title" style="text-align:center;font-size:2.3rem;font-weight:900;background:linear-gradient(90deg,#1976D2 0%, #42A5F5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-fill-color:transparent;margin-bottom:0.5rem;">منتجات مميزة</h2>
+        <p class="fp-subtitle" style="text-align:center;color:#1976D2;font-size:1.08rem;font-weight:600;margin-bottom:38px;">تشكيلة مختارة من أفضل منتجاتنا</p>
+        <div class="fp-cards-grid">
+          <!-- كرت 1 - خدمة تهكير تابلت A9+ -->
+          <div class="fp-card" onclick="window.location.href='products.html'" style="cursor:pointer;">
+            <div class="fp-img-box"><img src="assets/prodacts/505n.png" alt="تهكير تابلت A9+" class="fp-img"></div>
+            <div class="fp-card-title">تهكير تابلت A9+</div>
+            <div class="fp-card-desc">[ أعلى جودة ] - [ أسرع وقت ] - [ أحسن سعر ]</div>
+            <div class="fp-card-price">حسب الخدمة</div>
+            <a href="#" class="fp-btn" data-fp="tablet">طلب الخدمة</a>
+        </div>
+          <!-- كرت 2 -->
+          <div class="fp-card" onclick="window.location.href='products.html'" style="cursor:pointer;">
+            <div class="fp-img-box"><img src="assets/prodacts/yt.png" alt="يوتيوب بريميوم" class="fp-img"></div>
+            <div class="fp-card-title">يوتيوب بريميوم</div>
+            <div class="fp-card-desc">[ فوري ] - [ شخصي ] - [ عائلي ] - [ آمن ]</div>
+            <div class="fp-card-price">ابتداءً من <span>50 جنيه مصري</span></div>
+            <a href="#" class="fp-btn" data-fp="yt">طلب الخدمة</a>
+                    </div>
+          
+          <!-- كرت 3 - خدمة تهكير تابلت SM-T509 -->
+          <div class="fp-card" onclick="window.location.href='products.html'" style="cursor:pointer;">
+            <div class="fp-img-box"><img src="assets/prodacts/509.png" alt="تهكير تابلت SM-T509" class="fp-img"></div>
+            <div class="fp-card-title">تهكير تابلت SM-T509</div>
+            <div class="fp-card-desc">[ أعلى جودة ] - [ أسرع وقت ] - [ أحسن سعر ]</div>
+            <div class="fp-card-price">حسب الخدمة</div>
+            <a href="products.html" class="fp-btn">طلب الخدمة</a>
+                </div>
+          <!-- كرت 4 -->
+                    </div>
+        <div style="text-align:center;margin-top:38px;">
+          <a href="products.html" class="fp-showall-btn">عرض جميع المنتجات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل المحسن -->
+    <section class="team-section-custom">
+      <div class="team-header-center">
+        <h2 class="team-title-custom">
+          <span>فريق العمل المتميز</span>
+          <div class="team-title-underline-custom"></div>
+        </h2>
+        <div class="team-subtitle-custom">نخبة من الخبراء والمتخصصين في مجال التكنولوجيا</div>
+      </div>
+      <div class="team-container-custom">
+        <div class="team-image-custom">
+          <div class="team-logo-container">
+            <img src="assets/TEEMLOGO.jpg" alt="Team Logo" class="shield-img-custom">
+          </div>
+        </div>
+        <div class="team-info-custom">
+          <div class="team-desc-custom">
+نفخر بفريق عمل متميّز يضم نخبة من المتخصصين ذوي الخبرة الواسعة في مجالات السوفت وير، وتفعيل الأدوات الاحترافية (Tools)، وخدمات أجهزة التابلت التعليمية الخاصة بالمدارس، بالإضافة إلى خدمات GSM المتقدمة.<br><br>
+يعمل فريقنا بكفاءة عالية وبروح الفريق الواحد لتقديم حلول متكاملة ومبتكرة تتناسب مع متطلبات السوق واحتياجات عملائنا من الأفراد والمؤسسات.<br><br>
+نعتمد على أحدث التقنيات العالمية ونحرص دائمًا على التطوير المستمر ومواكبة كل جديد في عالم التكنولوجيا، لنوفّر تجربة فريدة لا تقبل المساومة.
+          </div>
+          <ul class="team-list-custom">
+            <li class="team-member-card">
+              <div class="member-avatar">
+                <span class="member-emoji">👨‍💼</span>
+                <div class="member-badge">المؤسس</div>
+              </div>
+              <span class="team-name-custom">Ahmed Abd EL Shafy</span>
+              <span class="member-role">المؤسس والمدير التنفيذي</span>
+              <div class="member-socials">
+                <a href="https://t.me/asunlock" class="social-link telegram" target="_blank">
+                  <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://www.youtube.com/@as_unlock" class="social-link youtube" target="_blank">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/201234567890" class="social-link whatsapp" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <a href="#contact" class="team-btn-custom">
+            <i class="fas fa-handshake"></i>
+            تواصل مع فريق العمل
+          </a>
+        </div>
+      </div>
+    </section>
+    <style>
+      .team-section-custom {
+        padding: 70px 0 40px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+      }
+      .team-header-center {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .team-title-custom {
+        font-size: 2.3rem;
+        font-weight: 900;
+        color: #1976D2;
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+      }
+      .team-title-underline-custom {
+        width: 70px;
+        height: 4px;
+        background: linear-gradient(90deg,#1976D2,#42A5F5);
+        margin: 12px auto 0;
+        border-radius: 2px;
+      }
+      .team-subtitle-custom {
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      .team-container-custom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        max-width: 1100px;
+        margin: 0 auto;
+        flex-direction: row-reverse;
+        padding: 0 20px;
+      }
+      .team-image-custom {
+        flex: 0 0 370px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .team-logo-container {
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+        padding: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 260px;
+        min-height: 260px;
+        max-width: 340px;
+        max-height: 340px;
+      }
+      .shield-img-custom {
+        width: 240px;
+        height: 240px;
+        object-fit: contain;
+        display: block;
+        background: none;
+        border-radius: 22px;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+      }
+      .team-info-custom {
+        flex: 1 1 60%;
+        text-align: center;
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .team-desc-custom {
+        color: #333;
+        font-size: 1.08rem;
+        font-weight: 500;
+        line-height: 2.1;
+        max-width: 500px;
+        margin: 0 auto 30px auto;
+        background: rgba(255,255,255,0.97);
+        border-radius: 16px;
+        padding: 22px 18px;
+        box-shadow: 0 6px 18px rgba(25, 118, 210, 0.10);
+        border: 1.5px solid rgba(25, 118, 210, 0.09);
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+      }
+      .team-list-custom {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 32px 0;
+        width: 100%;
+        max-width: 420px;
+      }
+      .team-member-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+        padding: 38px 28px 32px 28px;
+        border-radius: 26px;
+        box-shadow: 0 12px 32px rgba(25, 118, 210, 0.15);
+        border: 2px solid rgba(25, 118, 210, 0.13);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        min-width: 260px;
+        max-width: 100%;
+      }
+      .member-avatar {
+        position: relative;
+      }
+      .member-emoji {
+        font-size: 3.2em;
+        color: #1976D2;
+        font-weight: 800;
+        display: block;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 4px 12px rgba(25, 118, 210, 0.25));
+      }
+      .member-badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+        color: white;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 700;
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.18);
+      }
+      .team-name-custom {
+        font-weight: 900;
+        font-size: 1.35em;
+        color: #1976D2;
+        margin: 0;
+        text-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
+      }
+      .member-role {
+        font-size: 1.13em;
+        color: #555;
+        font-weight: 600;
+        margin-top: 6px;
+        background: linear-gradient(135deg, rgba(25, 118, 210, 0.15) 0%, rgba(66, 165, 245, 0.15) 100%);
+        border-radius: 24px;
+        padding: 12px 28px;
+        border: 1.5px solid rgba(25, 118, 210, 0.13);
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.09);
+      }
+      .member-socials {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+      }
+      .social-link i {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 900px) {
+        .team-list-custom {
+          max-width: 100%;
+        }
+        .team-member-card {
+          padding: 22px 10px 18px 10px;
+          min-width: 160px;
+        }
+        .member-emoji {
+          font-size: 2.1em;
+        }
+        .member-badge {
+          font-size: 0.85rem;
+          padding: 6px 12px;
+        }
+        .team-name-custom {
+          font-size: 1.1em;
+        }
+        .member-role {
+          font-size: 1em;
+          padding: 8px 14px;
+        }
+        .social-link {
+          width: 32px;
+          height: 32px;
+        }
+        .social-link i {
+          font-size: 1.05rem;
+        }
+      }
+      .team-btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 32px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 8px 22px rgba(25, 118, 210, 0.18);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: none;
+        margin-top: 12px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .team-btn-custom:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 12px 32px rgba(25, 118, 210, 0.22);
+      }
+      .team-btn-custom i {
+        font-size: 1.2rem;
+      }
+      @media (max-width: 900px) {
+        .team-container-custom {
+          gap: 20px;
+        }
+        .team-logo-container {
+          padding: 12px;
+          min-width: 120px;
+          min-height: 120px;
+          max-width: 150px;
+          max-height: 150px;
+        }
+        .shield-img-custom {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      @media (max-width: 700px) {
+        .team-container-custom {
+          flex-direction: column;
+          gap: 18px;
+          padding: 0 5px;
+        }
+        .team-image-custom, .team-logo-container {
+          margin-bottom: 8px;
+          align-self: center;
+        }
+        .team-info-custom {
+          align-items: center;
+          text-align: center;
+        }
+        .team-desc-custom {
+          font-size: 0.98rem;
+          padding: 14px 7px;
+        }
+        .team-member-card {
+          padding: 12px;
+        }
+        .team-btn-custom {
+          font-size: 0.98rem;
+          padding: 10px 18px;
+        }
+      }
+    </style>
+
+    <!-- Contact Us Section: اتصل بنا (Modern Split Layout) -->
+    <section class="contact-section" id="contact">
+      <div class="contact-split-container">
+        <!-- Right: Info -->
+        <div class="contact-info-block">
+          <h2 class="contact-title-split">تواصل معنا</h2>
+          <div class="contact-underline"></div>
+          <p class="contact-desc-split">نحن جاهزون للإجابة على استفساراتكم</p>
+          <ul class="contact-details-list">
+            <li><span class="contact-icon-circle"><i class="fas fa-envelope"></i></span>
+              <div>
+                <span class="contact-detail-title">البريد الإلكتروني</span>
+                <a href="mailto:asunlockhelp@gmail.com" class="contact-detail-link">asunlockhelp@gmail.com</a>
+              </div>
+            </li>
+            <li><span class="contact-icon-circle"><i class="fas fa-phone"></i></span>
+              <div>
+                <span class="contact-detail-title">رقم الهاتف</span>
+                <a href="tel:01069062005" class="contact-detail-link">01069062005</a>
+              </div>
+            </li>
+            <li><span class="contact-icon-circle"><i class="fas fa-map-marker-alt"></i></span>
+              <div>
+                <span class="contact-detail-title">خدمات أونلاين</span>
+                <span class="contact-detail-link">نقدم خدماتنا عبر الإنترنت في جميع أنحاء العالم</span>
+              </div>
+            </li>
+          </ul>
+          <div class="contact-socials">
+            <a href="#" class="contact-social"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="contact-social"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="contact-social"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" class="contact-social"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <!-- Left: Form -->
+        <form class="contact-form-block" id="contactForm" autocomplete="off">
+          <input type="text" name="name" class="contact-input" placeholder="الاسم الكامل" required>
+          <input type="email" name="email" class="contact-input" placeholder="البريد الإلكتروني" required>
+          <input type="text" name="phone" class="contact-input" placeholder="رقم الهاتف">
+          <textarea name="message" class="contact-input contact-textarea" placeholder="رسالتك" rows="4" required></textarea>
+          <button type="submit" class="contact-submit-btn">إرسال الرسالة</button>
+          <div id="formResult" style="margin-top:10px;font-weight:700;"></div>
+        </form>
+      </div>
+    </section>
+    <!-- /Contact Us Section -->
+
+    <script>
+    document.getElementById('contactForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const resultDiv = document.getElementById('formResult');
+      resultDiv.textContent = '...جاري الإرسال';
+      try {
+        const res = await fetch('send-contact.php', {
+          method: 'POST',
+          body: formData
+        });
+        const text = await res.text();
+        if (text.trim() === 'success') {
+          resultDiv.textContent = 'تم إرسال رسالتك بنجاح! سنرد عليك قريباً.';
+          form.reset();
+        } else if (text.trim() === 'missing') {
+          resultDiv.textContent = 'يرجى ملء جميع الحقول المطلوبة.';
+        } else {
+          resultDiv.textContent = 'حدث خطأ أثناء الإرسال. حاول مرة أخرى.';
+        }
+      } catch (err) {
+        resultDiv.textContent = 'تعذر الاتصال بالخادم. حاول لاحقاً.';
+      }
+    };
+    </script>
+
+    
+
+    <footer class="modern-footer">
+      <div class="modern-footer-container">
+        <div class="footer-about">
+          <img src="logo.PNG" alt="A.S UNLOCK Logo" class="footer-logo-modern">
+          <h3>A.S UNLOCK</h3>
+          <p>خبراء السوفت وير وخدمات التابلت التعليمية والدعم الفني السريع.</p>
+        </div>
+        <div class="footer-links-modern">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="downloads.html">التحميلات</a></li>
+            <li><a href="team.html">فريق العمل</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-modern">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li><i class="fa fa-envelope"></i> asunlockhelp@gmail.com</li>
+            <li><i class="fa fa-phone"></i> 01069062005</li>
+          </ul>
+          <div class="footer-socials-modern">
+            <a href="https://wa.me/01069062005" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/as_unlock" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@as_unlock" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        </div>
+      </div>
+      <div class="footer-copyright-modern">
+        &copy; 2024 A.S UNLOCK. جميع الحقوق محفوظة.
+      </div>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!-- كروت المنتجات المميزة -->
+    <div id="tabletModal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;backdrop-filter:blur(8px);">
+      <!-- ... نفس محتوى modal من صفحة المنتجات ... -->
+    </div>
+    <div id="ytModal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;backdrop-filter:blur(8px);">
+      <!-- ... نفس محتوى modal من صفحة المنتجات ... -->
+    </div>
+    <script>
+    // ربط أزرار طلب الخدمة في المنتجات المميزة بالنوافذ المنبثقة
+      document.querySelectorAll('.fp-btn[data-fp="tablet"]').forEach(btn => {
+        btn.onclick = function(e) { e.preventDefault(); document.getElementById('tabletModal').style.display = 'flex'; };
+      });
+      document.querySelectorAll('.fp-btn[data-fp="yt"]').forEach(btn => {
+        btn.onclick = function(e) { e.preventDefault(); document.getElementById('ytModal').style.display = 'flex'; };
+      });
+      document.getElementById('tabletModal').addEventListener('click', function(e) { if(e.target === this) this.style.display = 'none'; });
+      document.getElementById('ytModal').addEventListener('click', function(e) { if(e.target === this) this.style.display = 'none'; });
+    </script>
+    
+    <!-- ✅ إضافة ملف JavaScript للهيدر المحسن -->
+    <script src="header.js"></script>
+</body>
+</html>

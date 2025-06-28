@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فريق العمل - A.S UNLOCK</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* حركة العناصر العائمة */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    /* تأثيرات تفاعلية لسكشن انضم إلينا */
+    .join-section-card {
+      transition: all 0.3s ease;
+    }
+    
+    .join-section-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(25,118,210,0.2) !important;
+      border-color: #1976D2 !important;
+    }
+    
+    .join-section-btn {
+      transition: all 0.3s ease;
+    }
+    
+    .join-section-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+    }
+    
+    .join-section-btn:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+    
+    /* تحسين التجاوب للموبايل */
+    @media (max-width: 768px) {
+      .join-section-container {
+        padding: 40px 15px !important;
+      }
+      
+      .join-section-title {
+        font-size: 2rem !important;
+      }
+      
+      .join-section-cards {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+      
+      .join-section-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+      }
+      
+      .join-section-btn {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
+    
+    /* الهيدر المحسن */
+    header.modern-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      min-height: 70px;
+      height: 70px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 16px rgba(25, 118, 210, 0.1);
+      border-bottom: 1.5px solid #ececec;
+      transition: all 0.4s ease;
+    }
+    
+    /* تحسين الهيدر عند التمرير */
+    header.modern-header.scrolled {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15);
+    }
+    
+    /* حالة الهيدر عند التمرير للأسفل */
+    header.modern-header.scroll-down {
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 1px 6px rgba(25, 118, 210, 0.06);
+      border-bottom-color: rgba(236, 236, 236, 0.6);
+    }
+    
+    /* حالة الهيدر عند التمرير للأعلى */
+    header.modern-header.scroll-up {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 16px rgba(25, 118, 210, 0.1);
+      border-bottom-color: #ececec;
+    }
+    
+    /* تأثير إضافي للعناصر داخل الهيدر عند التمرير */
+    header.modern-header.scroll-down .branding span {
+      opacity: 0.8;
+    }
+    
+    header.modern-header.scroll-down .main-nav ul li a {
+      opacity: 0.9;
+    }
+    
+    header.modern-header.scroll-down .contact-btn,
+    header.modern-header.scroll-down .login-btn {
+      opacity: 0.85;
+    }
+    
+    header.modern-header.scroll-down .social-icon {
+      opacity: 0.8;
+    }
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    
+    .branding:hover {
+      transform: scale(1.05);
+    }
+    
+    .branding img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .branding:hover img {
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+      transform: rotate(5deg);
+    }
+    
+    .branding span {
+      font-size: 1.25rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #1976D2, #42A5F5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.03em;
+      transition: all 0.3s ease;
+    }
+    
+    .branding:hover span {
+      background: linear-gradient(90deg, #42A5F5, #1976D2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .main-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .main-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .main-nav ul li {
+      margin: 0;
+      position: relative;
+    }
+    
+    .main-nav ul li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #333;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      min-width: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .main-nav ul li a:hover::before {
+      left: 100%;
+    }
+    
+    .main-nav ul li a:hover,
+    .main-nav ul li a.active {
+      background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    
+    .contact-btn, .login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      min-width: 120px;
+      height: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-btn::before, .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .contact-btn:hover::before, .login-btn:hover::before {
+      left: 100%;
+    }
+    
+    .contact-btn {
+      background: linear-gradient(90deg, #1976D2, #42A5F5);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+    }
+    
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4);
+    }
+    
+    .login-btn {
+      background: #fff;
+      color: #1976D2;
+      border: 2px solid #1976D2;
+    }
+    
+    .login-btn:hover {
+      background: #1976D2;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    
+    /* الأيقونات الاجتماعية */
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .social-icon:hover::before {
+      left: 100%;
+    }
+    
+    .social-icon.whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+    
+    .social-icon.telegram {
+      background: linear-gradient(135deg, #0088cc, #005580);
+    }
+    
+    .social-icon.youtube {
+      background: linear-gradient(135deg, #FF0000, #CC0000);
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-2px) scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* زر القائمة للموبايل */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      gap: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background: #1976D2;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    /* القائمة المتحركة */
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #ececec;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu.show {
+      transform: translateY(0);
+    }
+    
+    .mobile-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .mobile-menu ul li a {
+      display: block;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #333;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mobile-menu ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .mobile-menu ul li a:hover::before {
+      left: 100%;
+    }
+    
+    .mobile-menu ul li a:hover,
+    .mobile-menu ul li a.active {
+      background: linear-gradient(90deg, #1976D2 0%, #42A5F5 100%);
+      color: #fff;
+      transform: translateX(-5px);
+    }
+    
+    /* التجاوب مع الشاشات المختلفة */
+    @media (max-width: 1200px) {
+      .header-container {
+        padding: 0 16px;
+      }
+      
+      .main-nav ul li a {
+        padding: 10px 16px;
+        font-size: 1rem;
+        min-width: 90px;
+      }
+      
+      .contact-btn, .login-btn {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+        min-width: 100px;
+        height: 40px;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      header.modern-header {
+        min-height: 60px;
+        height: 60px;
+      }
+      
+      .branding img {
+        width: 36px;
+        height: 36px;
+      }
+      
+      .branding span {
+        font-size: 1.1rem;
+      }
+      
+      .main-nav {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+      
+      .contact-btn, .login-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+        min-width: 80px;
+        height: 36px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .header-container {
+        padding: 0 12px;
+      }
+      
+      .branding span {
+        display: none;
+      }
+      
+      .contact-btn, .login-btn {
+        display: none;
+      }
+      
+      .social-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* باقي الأنماط */
+    body {
+      background: #fff;
+      font-family: 'Cairo', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #181a20;
+    }
+    
+    .team-header {
+      background: linear-gradient(90deg,#1976D2,#42A5F5);
+      color: #fff;
+      padding: 48px 0 24px 0;
+      text-align: center;
+    }
+    
+    .team-header h1 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin: 0 0 10px 0;
+      letter-spacing: 0.5px;
+    }
+    
+    .team-header p {
+      font-size: 1.13rem;
+      opacity: 0.97;
+      font-weight: 500;
+      margin: 0;
+    }
+    
+    .team-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 16px 32px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    
+    .team-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 24px #1976d21a, 0 1.5px 8px #1976d20a;
+      padding: 32px 24px 24px 24px;
+      width: 290px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.18s;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .team-card:hover {
+      box-shadow: 0 8px 36px #1976d244, 0 2px 12px #1976d20a;
+      transform: translateY(-6px) scale(1.03);
+    }
+    
+    .team-img {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 3px solid #1976D2;
+      box-shadow: 0 2px 8px #1976d222;
+      background: #f3f7fa;
+    }
+    
+    .team-name {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #1976D2;
+      margin-bottom: 6px;
+    }
+    
+    .team-role {
+      font-size: 1.05rem;
+      color: #1565C0;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .team-bio {
+      font-size: 0.98rem;
+      color: #333;
+      margin-bottom: 18px;
+      min-height: 48px;
+    }
+    
+    .team-socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    
+    .team-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#1976D2 60%,#42A5F5 100%);
+      color: #fff;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 8px #1976D244;
+      transition: background 0.2s, color 0.2s, transform 0.18s;
+      text-decoration: none;
+    }
+    
+    .team-socials a:hover {
+      background: #fff;
+      color: #1976D2;
+      border: 2px solid #1976D2;
+      transform: scale(1.13);
+    }
+    
+    @media (max-width: 900px) {
+      .team-container { gap: 18px; }
+      .team-card { width: 95vw; max-width: 340px; }
+    }
+    
+    @media (max-width: 600px) {
+      .team-header { padding: 32px 0 14px 0; }
+      .team-header h1 { font-size: 1.4rem; }
+      .team-header p { font-size: 1rem; }
+      .team-container { padding: 18px 2vw 18px 2vw; }
+      .team-card { padding: 22px 8px 18px 8px; }
+    }
+    
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    
+    .team-card.team-style-modern {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #1976d21a, 0 1.5px 8px #1976d20a;
+      padding: 28px 18px 18px 18px;
+      width: 270px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.18s;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+    }
+    
+    .team-card.team-style-modern:hover {
+      box-shadow: 0 8px 36px #1976d244, 0 2px 12px #1976d20a;
+      transform: translateY(-6px) scale(1.03);
+    }
+    
+    .team-img.team-img-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 14px;
+      border: 3px solid #1976D2;
+      box-shadow: 0 2px 8px #1976d222;
+      background: #f3f7fa;
+    }
+    
+    .team-actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .team-btn {
+      background: linear-gradient(90deg,#1976D2,#42A5F5);
+      color: #fff;
+      border: none;
+      border-radius: 18px;
+      padding: 6px 18px;
+      font-size: 0.97rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, transform 0.16s;
+      box-shadow: 0 2px 8px #1976d222;
+      cursor: pointer;
+      display: inline-block;
+    }
+    
+    .team-btn:hover {
+      background: linear-gradient(90deg,#42A5F5,#1976D2);
+      color: #fff;
+      transform: scale(1.07);
+    }
+    
+    .team-btn.team-btn-outline {
+      background: #fff;
+      color: #1976D2;
+      border: 2px solid #1976D2;
+      padding: 6px 12px;
+      font-size: 1.1em;
+    }
+    
+    .team-btn.team-btn-outline:hover {
+      background: #1976D2;
+      color: #fff;
+    }
+    
+    @media (max-width: 900px) {
+      .team-container { gap: 18px; }
+      .team-card.team-style-modern { width: 95vw; max-width: 340px; }
+    }
+    
+    @media (max-width: 600px) {
+      .team-header { padding: 32px 0 14px 0; }
+      .team-header h1 { font-size: 1.4rem; }
+      .team-header p { font-size: 1rem; }
+      .team-container { padding: 18px 2vw 18px 2vw; }
+      .team-card.team-style-modern { padding: 18px 6px 12px 6px; }
+    }
+    
+    .ceo-img-hover {
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    .ceo-img-hover:hover {
+      transform: translateY(-10px) scale(1.08) rotate(-2deg);
+      box-shadow: 0 12px 36px #1976d244, 0 4px 16px #1976d20a;
+      z-index: 3;
+    }
+    
+    .custom-location-tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .custom-location-tooltip .tooltiptext {
+      visibility: hidden;
+      width: 170px;
+      background: #388e3c;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 0;
+      position: absolute;
+      z-index: 10;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      font-size: 0.98rem;
+      font-family: inherit;
+      pointer-events: none;
+      box-shadow: 0 2px 8px #388e3c33;
+    }
+    .custom-location-tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .team-card.team-style-modern a[href*="maps.app"]:hover {
+      text-decoration: underline;
+      color: #1976D2 !important;
+    }
+    
+    .location-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg,#1976D2 60%,#42A5F5 100%);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 2px 8px #1976d222;
+    }
+    .location-btn:hover {
+      box-shadow: 0 8px 24px #1976d244, 0 2px 8px #1976d222;
+      transform: scale(1.13) translateY(-2px);
+      color: #fff;
+    }
+    .location-btn:hover i {
+      color: #fff !important;
+      text-shadow: 0 0 6px #1976d2aa;
+    }
+  </style>
+</head>
+<body style="background:#fff;">
+  <!-- الهيدر المحسن -->
+  <header class="modern-header">
+    <div class="header-container">
+      <div class="branding">
+        <img src="logo.PNG" alt="A.S UNLOCK Logo">
+        <span>A.S UNLOCK</span>
+      </div>
+      
+      <nav class="main-nav desktop-menu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="products.html">المنتجات</a></li>
+          <li><a href="warranty.html">الضمان</a></li>
+          <li><a href="downloads.html">التحميلات</a></li>
+          <li><a href="team.html" class="active">فريق العمل</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="tel:+201069062005" class="contact-btn">
+          <i class="fas fa-phone"></i> اتصل بنا
+        </a>
+        <a href="under-construction.html" class="login-btn">
+          <i class="fa fa-sign-in-alt"></i> تسجيل الدخول
+        </a>
+        <a href="https://wa.me/201069062005" target="_blank" class="social-icon whatsapp" title="واتساب">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/as_unlock" target="_blank" class="social-icon telegram" title="تليجرام">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://www.youtube.com/@as_unlock" target="_blank" class="social-icon youtube" title="يوتيوب">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      
+      <button class="menu-toggle" aria-label="فتح القائمة">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- القائمة المتحركة للموبايل -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="products.html">المنتجات</a></li>
+      <li><a href="warranty.html">الضمان</a></li>
+      <li><a href="downloads.html">التحميلات</a></li>
+      <li><a href="team.html" class="active">فريق العمل</a></li>
+    </ul>
+  </nav>
+  <main style="padding-top:120px;min-height:70vh;background:#fff;">
+    <!-- عنوان رئيسي مع أيقونة -->
+    <section style="text-align:center;margin-bottom:32px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <span style="font-size:2.2rem;color:#1976D2;background:#fff;border-radius:50%;border:2.5px solid #1976D2;width:54px;height:54px;display:flex;align-items:center;justify-content:center;margin-bottom:0.5em;"><i class="fa fa-users"></i></span>
+        <h1 style="font-size:2.1rem;font-weight:900;color:#1976D2;margin:0;">فريق العمل</h1>
+        <div style="width:110px;height:4px;background:linear-gradient(90deg,#1976D2,#42A5F5);border-radius:2px;margin:10px auto 0 auto;"></div>
+        <p style="font-size:1.13rem;color:#333;margin:10px 0 0 0;">تعرف على أعضاء فريق A.S UNLOCK الذين يقفون خلف نجاح خدماتنا</p>
+      </div>
+    </section>
+    <!-- فريق الإدارة -->
+    <section style="margin-bottom:48px;">
+      <h2 style="text-align:center;color:#1565C0;font-size:1.35rem;font-weight:900;margin-bottom:18px;position:relative;">فريق الإدارة
+        <span style="display:block;width:70px;height:3px;background:#1976D2;margin:8px auto 0 auto;border-radius:2px;"></span>
+      </h2>
+      <div class="team-container" style="justify-content:center;gap:32px;flex-wrap:wrap;align-items:flex-start;">
+        <!-- بطاقة عضو إدارة 1 -->
+        <div class="team-card team-style-modern" style="background:#fff;border-radius:22px;box-shadow:0 4px 24px #1976d21a,0 1.5px 8px #1976d20a;padding:32px 18px 18px 18px;width:320px;text-align:center;position:relative;overflow:visible;height:auto;min-height:unset;">
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
+            <img src="assets/our-team-images/CEO.jpeg" alt="أحمد عبد الشافي" class="ceo-img-hover" style="width:120px;height:120px;object-fit:cover;box-shadow:0 4px 24px #1976d222,0 1.5px 8px #1976d20a;margin-bottom:12px;border:4px solid #ececec;position:absolute;top:-60px;left:50%;transform:translateX(-50%);border-radius:18px;background:#fff;z-index:2;">
+            <div style="height:78px;"></div>
+            <span style="font-size:1.35rem;font-weight:900;color:#8e24aa;letter-spacing:1.2px;line-height:1.2;display:block;margin-bottom:2px;">Ahmed Abdelshafy</span>
+            <div style="font-size:1.08rem;color:#1976D2;font-weight:800;margin-bottom:14px;letter-spacing:0.2px;">المؤسس والمدير التنفيذي</div>
+          </div>
+          <div class="team-bio" style="font-size:1.01rem;color:#666;line-height:2;margin-bottom:18px;min-height:48px;text-align:center;">يشغل منصب المؤسس والمدير التنفيذي لشركة A.S.Unlock، التي بدأت كموقع إلكتروني متخصص في فك أجهزة iPhone المحمية بنظام iCloud Lock، ثم تطورت لتقدم مجموعة واسعة من الخدمات التقنية، تشمل تهكير تابلت المدارس، تفعيل أدوات السوفت وير، جميع خدمات GSM، والكثير من الحلول التقنية المتقدمة الأخرى.</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px;max-width:340px;margin-left:auto;margin-right:auto;">
+            <div style="display:flex;gap:10px;justify-content:center;">
+              <span style="background:#1976D2;color:#fff;padding:7px 18px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">تهكير تابلت المدرس وحل جميع مشاكله</span>
+            </div>
+            <div style="display:flex;gap:10px;justify-content:center;">
+              <span style="background:#1976D2;color:#fff;padding:7px 18px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">تفعيل أدوات السوفت وير</span>
+              <span style="background:#1976D2;color:#fff;padding:7px 18px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">خدمات GSM</span>
+            </div>
+            <div style="display:flex;justify-content:center;">
+              <span style="background:#1976D2;color:#fff;padding:7px 18px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">حلول تقنية متقدمة</span>
+            </div>
+          </div>
+          <div class="team-actions" style="display:flex;justify-content:center;gap:10px;margin-bottom:16px;">
+            <a href="#" class="team-btn" style="background:linear-gradient(90deg,#1976D2,#42A5F5);color:#fff;border:none;border-radius:18px;padding:7px 22px;font-size:1.01rem;font-weight:800;text-decoration:none;transition:background 0.18s,color 0.18s,transform 0.16s;box-shadow:0 2px 8px #1976d222;cursor:pointer;display:inline-block;">تفاصيل أكثر</a>
+            <a href="mailto:asunlockhelp@gmail.com" class="team-btn team-btn-outline" style="background:#fff;color:#1976D2;border:2px solid #1976D2;padding:7px 16px;font-size:1.01rem;font-weight:800;">تواصل</a>
+          </div>
+          <div class="team-socials" style="display:flex;justify-content:center;gap:10px;margin-top:8px;">
+            <span class="custom-location-tooltip">
+              <a href="#" style="background:linear-gradient(135deg,#43ea7a,#388e3c);color:#fff;"><i class="fas fa-location-dot"></i></a>
+              <span class="tooltiptext">أونلاين - نخدمك من أي مكان</span>
+            </span>
+            <a href="https://wa.me/01069062005" target="_blank" title="واتساب" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/as_unlock" target="_blank" title="تليجرام" style="background:linear-gradient(135deg,#8e24aa,#1976D2);color:#fff;"><i class="fab fa-telegram-plane"></i></a>
+            <a href="mailto:asunlockhelp@gmail.com" target="_blank" title="بريد إلكتروني" style="background:linear-gradient(135deg,#1976D2,#42A5F5);color:#fff;"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.youtube.com/@as_unlock" target="_blank" title="يوتيوب" style="background:linear-gradient(135deg,#FF0000,#CC0000);color:#fff;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- بطاقة عضو إدارة 2 -->
+        <div class="team-card team-style-modern" style="background:#fff;border-radius:22px;box-shadow:0 4px 24px #1976d21a,0 1.5px 8px #1976d20a;padding:32px 18px 18px 18px;width:320px;text-align:center;position:relative;overflow:visible;height:auto;min-height:unset;">
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
+            <img src="assets/our-team-images/Ahmed Waleed.jpeg" alt="أحمد وليد" class="ceo-img-hover" style="width:120px;height:120px;object-fit:cover;box-shadow:0 4px 24px #1976d222,0 1.5px 8px #1976d20a;margin-bottom:12px;border:4px solid #ececec;position:absolute;top:-60px;left:50%;transform:translateX(-50%);border-radius:18px;background:#fff;z-index:2;">
+            <div style="height:78px;"></div>
+            <span style="font-size:1.35rem;font-weight:900;color:#8e24aa;letter-spacing:1.2px;line-height:1.2;display:block;margin-bottom:2px;">Ahmed Waleed</span>
+            <div style="font-size:1.08rem;color:#1976D2;font-weight:800;margin-bottom:14px;letter-spacing:0.2px;">مساعد تهكير تابلت المدارس</div>
+          </div>
+          <div class="team-bio" style="font-size:1.01rem;color:#666;line-height:2;margin-bottom:10px;min-height:32px;text-align:center;">متخصص في حلول مشاكل التابلت والدعم عن بعد، يتميز بسرعة الاستجابة وخدمة العملاء.</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:0;max-width:340px;margin-left:auto;margin-right:auto;">
+            <div style="display:flex;gap:8px;justify-content:center;">
+              <span style="background:#1976D2;color:#fff;padding:7px 14px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">تهكير تابلت المدارس</span>
+              <span style="background:#1976D2;color:#fff;padding:7px 14px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">الدعم عن بعد</span>
+            </div>
+            <div style="display:flex;justify-content:center;">
+              <span style="background:#1976D2;color:#fff;padding:7px 14px;border-radius:18px;font-size:0.97rem;font-weight:800;display:inline-block;text-align:center;">خدمة العملاء</span>
+            </div>
+          </div>
+          <div class="team-actions" style="display:flex;justify-content:center;gap:10px;margin-bottom:16px;">
+            <a href="#" class="team-btn" style="background:linear-gradient(90deg,#1976D2,#42A5F5);color:#fff;border:none;border-radius:18px;padding:7px 22px;font-size:1.01rem;font-weight:800;text-decoration:none;transition:background 0.18s,color 0.18s,transform 0.16s;box-shadow:0 2px 8px #1976d222;cursor:pointer;display:inline-block;">تفاصيل أكثر</a>
+            <a href="mailto:asunlockhelp@gmail.com" class="team-btn team-btn-outline" style="background:#fff;color:#1976D2;border:2px solid #1976D2;padding:7px 16px;font-size:1.01rem;font-weight:800;">تواصل</a>
+          </div>
+          <div class="team-socials" style="display:flex;justify-content:center;gap:10px;margin-top:8px;">
+            <span class="custom-location-tooltip">
+              <a href="#" style="background:linear-gradient(135deg,#43ea7a,#388e3c);color:#fff;"><i class="fas fa-location-dot"></i></a>
+              <span class="tooltiptext">أونلاين - نخدمك من أي مكان</span>
+            </span>
+            <a href="https://wa.me/01069062005" target="_blank" title="واتساب" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/as_unlock" target="_blank" title="تليجرام" style="background:linear-gradient(135deg,#8e24aa,#1976D2);color:#fff;"><i class="fab fa-telegram-plane"></i></a>
+            <a href="mailto:asunlockhelp@gmail.com" target="_blank" title="بريد إلكتروني" style="background:linear-gradient(135deg,#1976D2,#42A5F5);color:#fff;"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.youtube.com/@as_unlock" target="_blank" title="يوتيوب" style="background:linear-gradient(135deg,#FF0000,#CC0000);color:#fff;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- فريق العمل المساعد -->
+    <section>
+      <h2 style="text-align:center;color:#1565C0;font-size:1.35rem;font-weight:900;margin-bottom:18px;position:relative;">فريق العمل المساعد
+        <span style="display:block;width:70px;height:3px;background:#1976D2;margin:8px auto 0 auto;border-radius:2px;"></span>
+      </h2>
+      <div class="team-container" style="justify-content:center;gap:32px;flex-wrap:wrap;">
+        <!-- بطاقة عضو مساعد 1 -->
+        <div class="team-card team-style-modern" style="background:#fff;border-radius:22px;box-shadow:0 2px 12px #1976d21a;padding:28px 12px 18px 12px;width:260px;text-align:center;position:relative;overflow:visible;display:flex;flex-direction:column;align-items:center;">
+          <img src="assets/our-team-images/ELGENDY.jpeg" alt="عبد الرحمن الجندي" style="width:120px;height:120px;object-fit:cover;box-shadow:0 2px 8px #1976d222;border:3px solid #ececec;border-radius:50%;background:#fff;margin-bottom:10px;">
+          <div style="font-size:1.13rem;font-weight:900;color:#8e24aa;letter-spacing:0.7px;margin-bottom:2px;">عبد الرحمن الجندي</div>
+          <div style="font-size:0.98rem;color:#1976D2;font-weight:700;margin-bottom:10px;">امياي - بجوار مسجد جبر - القليوبية - طوخ</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:14px;">
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">FRP</span>
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">FORMAT</span>
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">UNLOCK BOOTLOADER</span>
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">تاب المدارس</span>
+          </div>
+          <div style="display:flex;justify-content:center;margin-top:6px;">
+            <a href="https://maps.app.goo.gl/1HNxhdFZKndguTh9A" target="_blank" class="location-btn"><i class="fas fa-location-dot"></i></a>
+          </div>
+        </div>
+        <!-- بطاقة عضو مساعد 3 - محمد أيمن -->
+        <div class="team-card team-style-modern" style="background:#fff;border-radius:22px;box-shadow:0 2px 12px #1976d21a;padding:28px 12px 18px 12px;width:260px;text-align:center;position:relative;overflow:visible;display:flex;flex-direction:column;align-items:center;">
+          <img src="assets/our-team-images/Mohamed Ayman.jpeg" alt="محمد أيمن" style="width:120px;height:120px;object-fit:cover;box-shadow:0 2px 8px #1976d222;border:3px solid #ececec;border-radius:50%;background:#fff;margin-bottom:10px;">
+          <div style="font-size:1.13rem;font-weight:900;color:#8e24aa;letter-spacing:0.7px;margin-bottom:2px;">محمد أيمن</div>
+          <div style="font-size:0.98rem;color:#1976D2;font-weight:700;margin-bottom:10px;">شها – أمام مدرسة عبد الباسط أبو العز – المنصورة – الدقهلية</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:14px;">
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">تهكير تابلت المدارس</span>
+            <span style="background:#1976D2;color:#fff;padding:6px 16px;border-radius:16px;font-size:0.97rem;font-weight:800;">حل جميع مشاكله</span>
+          </div>
+          <div style="display:flex;justify-content:center;margin-top:6px;">
+            <a href="https://maps.app.goo.gl/ivNHkJpjFgrLM6bPA" target="_blank" class="location-btn"><i class="fas fa-location-dot"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- سكشن انضم إلينا -->
+    <section style="background:linear-gradient(135deg,#f8f9ff 0%,#e3f2fd 100%);padding:60px 20px;margin:60px 0;border-radius:30px;position:relative;overflow:hidden;" class="join-section-container">
+      <!-- خلفية زخرفية -->
+      <div style="position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:linear-gradient(45deg,#1976D2,#42A5F5);border-radius:50%;opacity:0.1;animation:float 6s ease-in-out infinite;"></div>
+      <div style="position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;background:linear-gradient(45deg,#8e24aa,#1976D2);border-radius:50%;opacity:0.08;animation:float 8s ease-in-out infinite reverse;"></div>
+      
+      <div style="max-width:1200px;margin:0 auto;text-align:center;position:relative;z-index:2;">
+        <!-- أيقونة رئيسية -->
+        <div style="margin-bottom:30px;">
+          <span style="font-size:3.5rem;color:#1976D2;background:#fff;border-radius:50%;border:4px solid #1976D2;width:80px;height:80px;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 32px rgba(25,118,210,0.2);">
+            <i class="fas fa-handshake"></i>
+          </span>
+        </div>
+        
+        <!-- العنوان الرئيسي -->
+        <h2 style="font-size:2.5rem;font-weight:900;color:#1976D2;margin-bottom:20px;text-shadow:0 2px 4px rgba(25,118,210,0.1);" class="join-section-title">انضم إلينا</h2>
+        
+        <!-- خط فاصل -->
+        <div style="width:120px;height:4px;background:linear-gradient(90deg,#1976D2,#42A5F5);border-radius:2px;margin:0 auto 30px auto;"></div>
+        
+        <!-- النص الوصفي -->
+        <p style="font-size:1.2rem;color:#333;line-height:1.8;margin-bottom:40px;max-width:800px;margin-left:auto;margin-right:auto;">
+          هل لديك خبرة في مجال السوفت وير أو تهكير الأجهزة؟ نبحث عن مواهب متميزة للانضمام لفريقنا المتخصص في حلول التابلت التعليمية والخدمات التقنية المتقدمة
+        </p>
+        
+        <!-- المزايا -->
+        <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:50px;" class="join-section-cards">
+          <div style="background:#fff;padding:25px 20px;border-radius:20px;box-shadow:0 4px 20px rgba(25,118,210,0.1);border:2px solid #e3f2fd;min-width:200px;transition:all 0.3s ease;" class="join-section-card">
+            <div style="font-size:2rem;color:#1976D2;margin-bottom:15px;">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 style="font-size:1.1rem;font-weight:800;color:#1976D2;margin-bottom:10px;">خبرة تقنية</h3>
+            <p style="font-size:0.95rem;color:#666;line-height:1.6;">خبرة في السوفت وير والبرمجة</p>
+          </div>
+          
+          <div style="background:#fff;padding:25px 20px;border-radius:20px;box-shadow:0 4px 20px rgba(25,118,210,0.1);border:2px solid #e3f2fd;min-width:200px;transition:all 0.3s ease;" class="join-section-card">
+            <div style="font-size:2rem;color:#1976D2;margin-bottom:15px;">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="font-size:1.1rem;font-weight:800;color:#1976D2;margin-bottom:10px;">عمل جماعي</h3>
+            <p style="font-size:0.95rem;color:#666;line-height:1.6;">قدرة على العمل ضمن فريق</p>
+          </div>
+          
+          <div style="background:#fff;padding:25px 20px;border-radius:20px;box-shadow:0 4px 20px rgba(25,118,210,0.1);border:2px solid #e3f2fd;min-width:200px;transition:all 0.3s ease;" class="join-section-card">
+            <div style="font-size:2rem;color:#1976D2;margin-bottom:15px;">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 style="font-size:1.1rem;font-weight:800;color:#1976D2;margin-bottom:10px;">مرونة زمنية</h3>
+            <p style="font-size:0.95rem;color:#666;line-height:1.6;">عمل عن بعد ومرونة في المواعيد</p>
+          </div>
+        </div>
+        
+        <!-- أزرار التواصل -->
+        <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;" class="join-section-buttons">
+          <a href="https://wa.me/01069062005?text=مرحبا، أرغب في الانضمام لفريق العمل" target="_blank" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:15px 30px;border-radius:25px;font-size:1.1rem;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(37,211,102,0.3);transition:all 0.3s ease;border:2px solid transparent;" class="join-section-btn">
+            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+            تواصل عبر واتساب
+          </a>
+          
+          <a href="https://t.me/as_unlock" target="_blank" style="background:linear-gradient(135deg,#8e24aa,#1976D2);color:#fff;padding:15px 30px;border-radius:25px;font-size:1.1rem;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(142,36,170,0.3);transition:all 0.3s ease;border:2px solid transparent;" class="join-section-btn">
+            <i class="fab fa-telegram-plane" style="font-size:1.3rem;"></i>
+            تواصل عبر تليجرام
+          </a>
+          
+          <a href="mailto:asunlockhelp@gmail.com?subject=طلب انضمام لفريق العمل" style="background:linear-gradient(135deg,#1976D2,#42A5F5);color:#fff;padding:15px 30px;border-radius:25px;font-size:1.1rem;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(25,118,210,0.3);transition:all 0.3s ease;border:2px solid transparent;" class="join-section-btn">
+            <i class="fa fa-envelope" style="font-size:1.3rem;"></i>
+            راسلنا عبر الإيميل
+          </a>
+        </div>
+        
+        <!-- نص إضافي -->
+        <p style="font-size:1rem;color:#666;margin-top:30px;font-style:italic;">
+          سنقوم بالرد عليك في أقرب وقت ممكن وتقييم خبراتك ومهاراتك
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer class="modern-footer" style="background: linear-gradient(120deg, #162447 60%, #1f4068 100%) !important; border-top: 2px solid #1976D2; color: #fff;">
+    <div class="modern-footer-container">
+      <div class="footer-about">
+        <img src="logo.PNG" alt="A.S UNLOCK Logo" class="footer-logo-modern">
+        <h3>A.S UNLOCK</h3>
+        <p>خبراء السوفت وير وخدمات التابلت التعليمية والدعم الفني السريع.</p>
+      </div>
+      <div class="footer-links-modern">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="products.html">المنتجات</a></li>
+          <li><a href="warranty.html">الضمان</a></li>
+          <li><a href="downloads.html">التحميلات</a></li>
+          <li><a href="team.html" class="active">فريق العمل</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          <li><a href="terms.html">الشروط والسياسات</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-modern">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><i class="fa fa-envelope"></i> asunlockhelp@gmail.com</li>
+          <li><i class="fa fa-phone"></i> 01069062005</li>
+        </ul>
+        <div class="footer-socials-modern">
+          <a href="https://wa.me/01069062005" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://t.me/as_unlock" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@as_unlock" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright-modern">
+      &copy; 2025 A.S UNLOCK. جميع الحقوق محفوظة.
+    </div>
+  </footer>
+  
+  <script>
+    // التحكم في القائمة المتحركة للموبايل
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const header = document.querySelector('.modern-header');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('show');
+          
+          // تحريك الأشرطة في زر القائمة
+          const bars = menuToggle.querySelectorAll('.bar');
+          bars.forEach((bar, index) => {
+            if (mobileMenu.classList.contains('show')) {
+              if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
+              if (index === 1) bar.style.opacity = '0';
+              if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+              bar.style.transform = 'none';
+              bar.style.opacity = '1';
+            }
+          });
+        });
+        
+        // إغلاق القائمة عند النقر على أي رابط
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('show');
+            const bars = menuToggle.querySelectorAll('.bar');
+            bars.forEach(bar => {
+              bar.style.transform = 'none';
+              bar.style.opacity = '1';
+            });
+          });
+        });
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(event) {
+          if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+            mobileMenu.classList.remove('show');
+            const bars = menuToggle.querySelectorAll('.bar');
+            bars.forEach(bar => {
+              bar.style.transform = 'none';
+              bar.style.opacity = '1';
+            });
+          }
+        });
+      }
+      
+      // تحسين الهيدر عند التمرير
+      let lastScrollTop = 0;
+      let scrollThreshold = 50;
+      let isScrolling = false;
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // إضافة/إزالة كلاس scrolled للهيدر
+        if (scrollTop > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        // جعل الهيدر أكثر شفافية عند التمرير بدلاً من الإخفاء
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+          // التمرير للأسفل - جعل الهيدر أكثر شفافية
+          header.classList.remove('scroll-up');
+          header.classList.add('scroll-down');
+        } else if (scrollTop < lastScrollTop) {
+          // التمرير للأعلى - إعادة الشفافية الطبيعية
+          header.classList.remove('scroll-down');
+          header.classList.add('scroll-up');
+        }
+        
+        // إزالة الكلاسات بعد فترة من التوقف عن التمرير
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          header.classList.remove('scroll-down', 'scroll-up');
+        }, 1000);
+        
+        lastScrollTop = scrollTop;
+      });
+      
+      // إضافة تأثيرات تفاعلية للأزرار
+      const buttons = document.querySelectorAll('.contact-btn, .login-btn, .social-icon');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+      
+      // تحسين تجربة المستخدم على الأجهزة المحمولة
+      if ('ontouchstart' in window) {
+        // إضافة تأخير للتفاعل على الأجهزة اللمسية
+        const touchElements = document.querySelectorAll('.main-nav ul li a, .contact-btn, .login-btn');
+        touchElements.forEach(element => {
+          element.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+          });
+          
+          element.addEventListener('touchend', function() {
+            setTimeout(() => {
+              this.style.transform = '';
+            }, 150);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

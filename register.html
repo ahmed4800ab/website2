@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل حساب جديد - A.S UNLOCK</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        body {
+            background: #fff !important;
+            font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            min-width: 100vw;
+            box-sizing: border-box;
+        }
+        .register-section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            box-sizing: border-box;
+        }
+        .register-container {
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: 0 12px 32px #1976D122;
+            padding: 40px 32px 32px 32px;
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .register-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(90deg,#1976D2,#42A5F5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px auto;
+        }
+        .register-logo i {
+            color: #fff;
+            font-size: 2.2rem;
+        }
+        .register-title {
+            text-align: center;
+            color: #1976D2;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .register-desc {
+            text-align: center;
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+        }
+        .register-form label {
+            display: block;
+            color: #1976D2;
+            font-weight: 700;
+            margin-bottom: 7px;
+            font-size: 1rem;
+        }
+        .register-form input {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        .register-form input:focus {
+            border-color: #1976D2;
+            outline: none;
+        }
+        .register-btn {
+            width: 100%;
+            padding: 14px 0;
+            background: linear-gradient(90deg,#1976D2,#42A5F5);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 18px;
+            transition: background 0.3s;
+        }
+        .register-btn:hover {
+            background: linear-gradient(90deg,#42A5F5,#1976D2);
+        }
+        .register-link {
+            text-align: center;
+            color: #666;
+            font-size: 0.98rem;
+        }
+        .register-link a {
+            color: #1976D2;
+            text-decoration: none;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        .register-result {
+            margin-bottom: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر المحسن الموحد -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="branding">
+                <img src="logo.PNG" alt="A.S UNLOCK Logo">
+                <span>A.S UNLOCK</span>
+            </div>
+            
+            <nav class="main-nav desktop-menu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="warranty.html">الضمان</a></li>
+                    <li><a href="downloads.html">التحميلات</a></li>
+                    <li><a href="team.html">فريق العمل</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="tel:+201069062005" class="contact-btn">
+                    <i class="fas fa-phone"></i> اتصل بنا
+                </a>
+                <a href="login.html" class="login-btn">
+                    <i class="fa fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+                <a href="https://wa.me/201069062005" target="_blank" class="social-icon whatsapp" title="واتساب">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://t.me/as_unlock" target="_blank" class="social-icon telegram" title="تليجرام">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://www.youtube.com/@as_unlock" target="_blank" class="social-icon youtube" title="يوتيوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="فتح القائمة">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- القائمة المتحركة للموبايل -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="downloads.html">التحميلات</a></li>
+            <li><a href="team.html">فريق العمل</a></li>
+        </ul>
+    </nav>
+    <section class="register-section">
+        <div class="register-container">
+            <div class="register-logo"><i class="fas fa-user-plus"></i></div>
+            <div class="register-title">تسجيل حساب جديد</div>
+            <div class="register-desc">أنشئ حسابك للاستفادة من جميع خدمات الموقع.</div>
+            <form class="register-form" id="registerForm" autocomplete="off">
+                <label for="fullname"><i class="fas fa-user"></i> الاسم الكامل</label>
+                <input type="text" id="fullname" name="fullname" required placeholder="أدخل اسمك الكامل">
+                <label for="email"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+                <label for="password"><i class="fas fa-lock"></i> كلمة المرور</label>
+                <input type="password" id="password" name="password" required placeholder="********">
+                <label for="confirmPassword"><i class="fas fa-lock"></i> تأكيد كلمة المرور</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="أعد كتابة كلمة المرور">
+                <div id="registerResult" class="register-result"></div>
+                <button type="submit" class="register-btn"><i class="fas fa-user-plus"></i> تسجيل</button>
+            </form>
+            <div class="login-divider" style="text-align:center;margin:30px 0;position:relative;">
+                <span style="background:white;padding:0 15px;color:#666;font-size:0.9rem;">أو</span>
+                <hr style="border:none;height:1px;background:#e0e0e0;position:absolute;top:50%;left:0;right:0;z-index:-1;">
+            </div>
+            <div class="social-login" style="display:flex;gap:15px;margin-bottom:30px;">
+                <button type="button" class="social-btn google" style="flex:1;padding:12px;background:#fff;color:#666;border:2px solid #e0e0e0;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">
+                    <i class="fab fa-google" style="margin-left:8px;color:#DB4437;"></i>Google
+                </button>
+                <button type="button" class="social-btn facebook" style="flex:1;padding:12px;background:#fff;color:#666;border:2px solid #e0e0e0;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;">
+                    <i class="fab fa-facebook-f" style="margin-left:8px;color:#4267B2;"></i>Facebook
+                </button>
+            </div>
+            <div class="register-link">
+                لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a>
+            </div>
+        </div>
+    </section>
+    <footer class="modern-footer" style="background: linear-gradient(120deg, #162447 60%, #1f4068 100%) !important; border-top: 2px solid #1976D2; color: #fff;">
+      <div class="modern-footer-container">
+        <div class="footer-about">
+          <img src="logo.PNG" alt="A.S UNLOCK Logo" class="footer-logo-modern">
+          <h3>A.S UNLOCK</h3>
+          <p>خبراء السوفت وير وخدمات التابلت التعليمية والدعم الفني السريع.</p>
+        </div>
+        <div class="footer-links-modern">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="downloads.html">التحميلات</a></li>
+            <li><a href="team.html">فريق العمل</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            <li><a href="terms.html">الشروط والسياسات</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-modern">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li><i class="fa fa-envelope"></i> asunlockhelp@gmail.com</li>
+            <li><i class="fa fa-phone"></i> 01069062005</li>
+          </ul>
+          <div class="footer-socials-modern">
+            <a href="https://wa.me/01069062005" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/as_unlock" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@as_unlock" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright-modern">
+        &copy; 2024 A.S UNLOCK. جميع الحقوق محفوظة.
+      </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // أي فورم تسجيل حساب جديد
+      var registerForm = document.getElementById('registerForm');
+      if(registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          window.location.href = 'under-construction.html';
+        });
+      }
+      // أي زر سوشيال
+      document.querySelectorAll('.social-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'under-construction.html';
+        });
+      });
+      // زر تسجيل الدخول (في رابط أسفل الفورم)
+      var loginBtn = document.querySelector('.register-link a[href="login.html"]');
+      if(loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'under-construction.html';
+        });
+      }
+    });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    
+    <!-- ✅ إضافة ملف JavaScript للهيدر المحسن -->
+    <script src="header.js"></script>
+</body>
+</html> 
